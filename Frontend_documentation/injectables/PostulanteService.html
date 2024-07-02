@@ -1,0 +1,1888 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sbl-municipio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sbl-municipio documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >PostulanteService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/servicios/postulante.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_postulanteLocal" >_postulanteLocal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_tienePerfil" >_tienePerfil</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#calle" >calle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#estadoCivil" >estadoCivil</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#foto" >foto</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#idUsuario" >idUsuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#localidad" >localidad</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#pais" >pais</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#partido" >partido</a>
+                            </li>
+                            <li>
+                                <a href="#postulanteLocal" >postulanteLocal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#provincia" >provincia</a>
+                            </li>
+                            <li>
+                                <a href="#tienePerfil" >tienePerfil</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#tipoDni" >tipoDni</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#tipoGenero" >tipoGenero</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#urlgetPostulantePorIdUsuario" >urlgetPostulantePorIdUsuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#urlPostPostulante" >urlPostPostulante</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#actualizarPerfilPostulante" >actualizarPerfilPostulante</a>
+                            </li>
+                            <li>
+                                <a href="#blanqueoDePostulanteLocal" >blanqueoDePostulanteLocal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteFileCv" >deleteFileCv</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getFileCv" >getFileCv</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPostulantePorIdUsuario" >getPostulantePorIdUsuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#obtenerPostulanteByIdUsuario" >obtenerPostulanteByIdUsuario</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#persistPostulante" >persistPostulante</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#postFileCv" >postFileCv</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#postPostulante" >postPostulante</a>
+                            </li>
+                            <li>
+                                <a href="#updateEstadoPostulanteLocal" >updateEstadoPostulanteLocal</a>
+                            </li>
+                            <li>
+                                <a href="#updateEstadoTienePerfil" >updateEstadoTienePerfil</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: HttpClient)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/servicios/postulante.service.ts:60</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpClient</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarPerfilPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>actualizarPerfilPostulante</b></span>
+                        <a href="#actualizarPerfilPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>actualizarPerfilPostulante()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="172"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:172</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualizar datos de postulante</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="blanqueoDePostulanteLocal"></a>
+                    <span class="name">
+                        <span ><b>blanqueoDePostulanteLocal</b></span>
+                        <a href="#blanqueoDePostulanteLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>blanqueoDePostulanteLocal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="275"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:275</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Blanquea los valores del perfil del postulante</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteFileCv"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deleteFileCv</b></span>
+                        <a href="#deleteFileCv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteFileCv()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="245"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:245</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Acción HTTP Request DELETE de archivo de CV subido</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFileCv"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getFileCv</b></span>
+                        <a href="#getFileCv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFileCv()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="226"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:226</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Descarga archivo de CV desde el backend</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;Blob | null&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPostulantePorIdUsuario"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getPostulantePorIdUsuario</b></span>
+                        <a href="#getPostulantePorIdUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPostulantePorIdUsuario(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Se encarga de hacer el HTTP GET a la API del backend para traer un perfil de postulante con un id de usuario</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>de usuario</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >Promise&lt;PostulantePerfil&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>promesa con el perfil del postulante si es que lo encuentra</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerPostulanteByIdUsuario"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>obtenerPostulanteByIdUsuario</b></span>
+                        <a href="#obtenerPostulanteByIdUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>obtenerPostulanteByIdUsuario(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene el perfil de un postulante almacenado en el backend
+Actualiza los estados tienePerfil y postulantePerfil</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>es un id de usuario que viene dado por el login</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="persistPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>persistPostulante</b></span>
+                        <a href="#persistPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>persistPostulante()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="130"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:130</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Persiste contra la API un nuevo perfil de postulante
+Actualia los estados internos de postulantePerfil y tienePerfil</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postFileCv"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>postFileCv</b></span>
+                        <a href="#postFileCv"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>postFileCv(formData: FormData)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="259"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:259</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Acción HTTP Request POST para subir archivo al backend</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>formData</td>
+                                            <td>
+                                                        <code>FormData</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>postPostulante</b></span>
+                        <a href="#postPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>postPostulante()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="156"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:156</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Se encarga de hacer el HTTP POST a la API del Backend</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >Promise&lt;PostulantePerfil&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>retorno de la promesa con el perfil del postulante</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateEstadoPostulanteLocal"></a>
+                    <span class="name">
+                        <span ><b>updateEstadoPostulanteLocal</b></span>
+                        <a href="#updateEstadoPostulanteLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateEstadoPostulanteLocal(newPostulante: <a href="../interfaces/PostulantePerfil.html" target="_self">PostulantePerfil</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="206"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:206</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza el estado interno del perfil del postulante con un nuevo valor
+Emite el nuevo valor a todos los suscriptores</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>newPostulante</td>
+                                            <td>
+                                                            <code><a href="../interfaces/PostulantePerfil.html" target="_self" >PostulantePerfil</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>nuevos valores del perfil postulante</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateEstadoTienePerfil"></a>
+                    <span class="name">
+                        <span ><b>updateEstadoTienePerfil</b></span>
+                        <a href="#updateEstadoTienePerfil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateEstadoTienePerfil(newState: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="215"
+                                    class="link-to-prism">src/app/servicios/postulante.service.ts:215</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>actualiza el estado interno de tienePerfil y lo emite a los suscriptores</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>newState</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>nuevo valor boolean</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_postulanteLocal"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_postulanteLocal</b></span>
+                        <a href="#_postulanteLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >PostulantePerfil</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/servicios/postulante.service.ts:54</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado que mantiene los datos del perfil de postulante del lado del cliente</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_tienePerfil"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_tienePerfil</b></span>
+                        <a href="#_tienePerfil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/servicios/postulante.service.ts:59</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado que notifica si el usuario tiene o no perfil</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calle"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>calle</b></span>
+                        <a href="#calle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Calle.html" target="_self" >Calle</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ idCalle: NaN, descripcion: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/servicios/postulante.service.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="estadoCivil"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>estadoCivil</b></span>
+                        <a href="#estadoCivil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/EstadoCivil.html" target="_self" >EstadoCivil</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ idEstadoCivil: NaN, descripcion: &#x27;&#x27;, }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/servicios/postulante.service.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="foto"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>foto</b></span>
+                        <a href="#foto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/FileData.html" target="_self" >FileData</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ name: &#x27;&#x27;, extension: &#x27;&#x27;, data: &#x27;&#x27;, path: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/servicios/postulante.service.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="idUsuario"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>idUsuario</b></span>
+                        <a href="#idUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>6</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/servicios/postulante.service.ts:50</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado que mantiene el id de usuario.
+En sircunstancias normales se obtiene con el Login</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="localidad"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>localidad</b></span>
+                        <a href="#localidad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Localidad.html" target="_self" >Localidad</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ idLocalidad: NaN, codPostal: &#x27;&#x27;, descripcion: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/servicios/postulante.service.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pais"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>pais</b></span>
+                        <a href="#pais"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Pais.html" target="_self" >Pais</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ idPais: NaN, descripcion: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/servicios/postulante.service.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="partido"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>partido</b></span>
+                        <a href="#partido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Partido.html" target="_self" >Partido</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ idpartido: NaN, descripcion: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/servicios/postulante.service.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postulanteLocal"></a>
+                    <span class="name">
+                        <span ><b>postulanteLocal</b></span>
+                        <a href="#postulanteLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >BehaviorSubject&lt;PostulantePerfil&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;PostulantePerfil&gt;(this._postulanteLocal)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/servicios/postulante.service.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="provincia"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>provincia</b></span>
+                        <a href="#provincia"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Provincia.html" target="_self" >Provincia</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ idProvincia: NaN, descripcion: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/servicios/postulante.service.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tienePerfil"></a>
+                    <span class="name">
+                        <span ><b>tienePerfil</b></span>
+                        <a href="#tienePerfil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>BehaviorSubject&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;boolean&gt;(this._tienePerfil)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/servicios/postulante.service.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tipoDni"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>tipoDni</b></span>
+                        <a href="#tipoDni"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/TipoDocumento.html" target="_self" >TipoDocumento</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ idTipodoc: NaN, descripcion: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/servicios/postulante.service.ts:32</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Declaración e inicialización de objetos que son atributos del perfil del postulante</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="tipoGenero"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>tipoGenero</b></span>
+                        <a href="#tipoGenero"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Genero.html" target="_self" >Genero</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ idGenero: NaN, descripcion: &#x27;&#x27; }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/servicios/postulante.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlgetPostulantePorIdUsuario"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>urlgetPostulantePorIdUsuario</b></span>
+                        <a href="#urlgetPostulantePorIdUsuario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${API_BASE}/${API_PATH.POSTULANTE_POR_USUARIO}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/servicios/postulante.service.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlPostPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>urlPostPostulante</b></span>
+                        <a href="#urlPostPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${API_BASE}/${API_PATH.POSTULANTE}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/servicios/postulante.service.ts:44</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Declaración e inicialización de URLs para ruteo y navegación</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { TipoDocumento } from &#x27;../interfaces/TipoDocumento&#x27;;
+import { Genero } from &#x27;../interfaces/Genero&#x27;;
+import { Pais } from &#x27;../interfaces/Pais&#x27;;
+import { Partido } from &#x27;../interfaces/Partido&#x27;;
+import { Localidad } from &#x27;../interfaces/Localidad&#x27;;
+import { Calle } from &#x27;../interfaces/Calle&#x27;;
+import { Provincia } from &#x27;../interfaces/Provincia&#x27;;
+import { EstadoCivil } from &#x27;../interfaces/EstadoCivil&#x27;;
+import { BehaviorSubject } from &#x27;rxjs&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { API_BASE, API_PATH } from &#x27;src/constants&#x27;;
+import { PostulantePerfil } from &#x27;../interfaces/PostulantePerfil&#x27;;
+import { FileData } from &#x27;../interfaces/FileData&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+
+/**
+ * PostulanteService
+ * Tiene las sigueintes responsabilidades:
+ *  1. Mantener estado interno de perfil de usuario, Ofrecer y emitir el valor actualizado a los sucriptores.
+ *  2. ABM de perfil de usuario contra la API.
+ *  3. Estado interno booleano para indica si el idUsuario actual tiene o no perfil de usuario en el backend. El estado se ofrece como observable.
+ *  4. GET, POST y DELETE de archvivo de CV. Llevar estado interno de archivo de CV y notificarlo a suscriptores
+ */
+export class PostulanteService {
+  /**
+   * Declaración e inicialización de objetos que son atributos del perfil del postulante
+   */
+  private tipoDni: TipoDocumento &#x3D; { idTipodoc: NaN, descripcion: &#x27;&#x27; };
+  private tipoGenero: Genero &#x3D; { idGenero: NaN, descripcion: &#x27;&#x27; };
+  private estadoCivil: EstadoCivil &#x3D; { idEstadoCivil: NaN, descripcion: &#x27;&#x27;, };
+  private pais: Pais &#x3D; { idPais: NaN, descripcion: &#x27;&#x27; };
+  private provincia: Provincia &#x3D; { idProvincia: NaN, descripcion: &#x27;&#x27; };
+  private partido: Partido &#x3D; { idpartido: NaN, descripcion: &#x27;&#x27; };
+  private localidad: Localidad &#x3D; { idLocalidad: NaN, codPostal: &#x27;&#x27;, descripcion: &#x27;&#x27; };
+  private calle: Calle &#x3D; { idCalle: NaN, descripcion: &#x27;&#x27; };
+  private foto: FileData &#x3D; { name: &#x27;&#x27;, extension: &#x27;&#x27;, data: &#x27;&#x27;, path: &#x27;&#x27; }
+  /**
+   * Declaración e inicialización de URLs para ruteo y navegación
+   */
+  private urlPostPostulante: string &#x3D; &#x60;${API_BASE}/${API_PATH.POSTULANTE}&#x60;
+  private urlgetPostulantePorIdUsuario: string &#x3D; &#x60;${API_BASE}/${API_PATH.POSTULANTE_POR_USUARIO}&#x60;
+  /**
+   * Estado que mantiene el id de usuario.
+   * En sircunstancias normales se obtiene con el Login
+   */
+  private idUsuario: number &#x3D; 6;
+  /**
+   * Estado que mantiene los datos del perfil de postulante del lado del cliente
+   */
+  private _postulanteLocal!: PostulantePerfil;
+  postulanteLocal: BehaviorSubject&lt;PostulantePerfil&gt; &#x3D; new BehaviorSubject&lt;PostulantePerfil&gt;(this._postulanteLocal);
+  /**
+   * Estado que notifica si el usuario tiene o no perfil
+   */
+  private _tienePerfil: boolean &#x3D; false;
+  tienePerfil: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject&lt;boolean&gt;(this._tienePerfil)
+
+
+
+
+
+  constructor(private http: HttpClient) {
+    this.blanqueoDePostulanteLocal()
+    // ACTUALIZA POR PRIMERA VEZ A TODOS LOS SUBCRIPTOS CON UN POSTULANTE VACIO
+    this.updateEstadoPostulanteLocal(this._postulanteLocal);
+    // OBTENEMOS EL POSTULANTE REAL
+    this.obtenerPostulanteByIdUsuario(this.idUsuario)
+  }
+
+
+
+
+
+
+
+  // ************************************* HTTP REQUEST Functions ***********************************************/
+
+  /**
+   * Obtiene el perfil de un postulante almacenado en el backend
+   * Actualiza los estados tienePerfil y postulantePerfil
+   * @param id es un id de usuario que viene dado por el login
+   */
+  async obtenerPostulanteByIdUsuario(id: number) {
+    try {
+      this.idUsuario &#x3D; id;
+      const perfilByUsuario: PostulantePerfil &#x3D; await this.getPostulantePorIdUsuario(id);
+
+      this.updateEstadoTienePerfil(true)
+      this.updateEstadoPostulanteLocal(perfilByUsuario)
+
+      console.log(perfilByUsuario);
+
+    } catch (error) {
+      this.updateEstadoTienePerfil(false)
+
+      this.blanqueoDePostulanteLocal();
+      this.postulanteLocal.next(this._postulanteLocal);
+
+      console.error(error);
+    }
+  }
+
+  /**
+   * Se encarga de hacer el HTTP GET a la API del backend para traer un perfil de postulante con un id de usuario
+   * @param id de usuario
+   * @returns promesa con el perfil del postulante si es que lo encuentra
+   */
+  async getPostulantePorIdUsuario(id: number): Promise&lt;PostulantePerfil&gt; {
+    try {
+      const response &#x3D; await this.http.get&lt;any&gt;(&#x60;${this.urlgetPostulantePorIdUsuario}/${id}&#x60;).toPromise();
+      return response;
+    } catch (error: any) {
+      if (error.status &#x3D;&#x3D;&#x3D; 404) {
+        console.error(&#x60;El postulante con el id de Usuario ${id}, no posee un perfil cargado&#x60;, error);
+      } else {
+        console.error(&#x27;Error desconocido&#x27;, error);
+      }
+      throw error;
+    }
+  }
+
+  /**
+   * Persiste contra la API un nuevo perfil de postulante
+   * Actualia los estados internos de postulantePerfil y tienePerfil
+   */
+  async persistPostulante() {
+    console.log(this._postulanteLocal);
+    try {
+      // 1. modificar la data de la foto de perfil si es que tiene
+      const dataFotoBase64 &#x3D; this._postulanteLocal.foto.data;
+      if (dataFotoBase64 !&#x3D; &quot;&quot;) {
+        this._postulanteLocal.foto.data &#x3D; dataFotoBase64.split(&#x27;,&#x27;)[1];
+      }
+      // 2. postea al backend y obtiene la respuesta
+      const newPostulanteResponse: PostulantePerfil &#x3D; await this.postPostulante();
+      // 3. sincroniza el nuevo valor del estado del perfil del postulante y lo emitirlo
+      this.updateEstadoPostulanteLocal(newPostulanteResponse)
+      // 4. sincroniza el nuevo estado de tienePerfil a true, y lo emitirlo
+      this.updateEstadoTienePerfil(true)
+
+    } catch (error) {
+      // 4. manejo de errores
+      console.log(&#x27;postulanteService, method persistPostulante. Error: &#x27;, error);
+      throw (error)
+    }
+  }
+
+  /**
+   * Se encarga de hacer el HTTP POST a la API del Backend
+   * @returns retorno de la promesa con el perfil del postulante
+   */
+  async postPostulante(): Promise&lt;PostulantePerfil&gt; {
+    let postData &#x3D; { ... this._postulanteLocal }
+
+    try {
+      const response &#x3D; await this.http.post&lt;any&gt;(this.urlPostPostulante, postData).toPromise();
+      return response;
+
+    } catch (error) {
+      console.error(&#x27;No se pudo postear el nuevo postulante &#x27;, error)
+      throw error;
+    }
+  }
+
+  /**
+   * Actualizar datos de postulante
+   */
+  async actualizarPerfilPostulante() {
+    console.log(this._postulanteLocal);
+    try {
+      // 1. modificar la data de la foto de perfil si es que tiene
+      const dataFotoBase64 &#x3D; this._postulanteLocal.foto.data;
+      if (dataFotoBase64 !&#x3D; null &amp;&amp; dataFotoBase64 !&#x3D; &quot;&quot;) {
+        this._postulanteLocal.foto.data &#x3D; dataFotoBase64.split(&#x27;,&#x27;)[1];
+      }
+      // 2. postea al backend y obtiene la respuesta
+      let postData &#x3D; { ... this._postulanteLocal }
+      let urlUpdate &#x3D; &#x60;${this.urlPostPostulante}/${this._postulanteLocal.idpostulante}&#x60;
+      try {
+        const newPostulanteResponse &#x3D; await this.http.put&lt;any&gt;(urlUpdate, postData).toPromise();
+        // 3. sincroniza el nuevo valor del estado del perfil del postulante y lo emitirlo
+        this.updateEstadoPostulanteLocal(newPostulanteResponse)
+      } catch (error) {
+        console.error(&#x27;No se pudo actualizar el perfil del postulante &#x27;, error)
+        throw error;
+      }
+
+    } catch (error) {
+      // 4. manejo de errores
+      console.log(&#x27;postulanteService, method persistPostulante. Error: &#x27;, error);
+      throw (error)
+    }
+  }
+
+  // ************************************* ACUTALIZACION DE ESTADOS ***********************************************/
+
+  /**
+   * Actualiza el estado interno del perfil del postulante con un nuevo valor
+   * Emite el nuevo valor a todos los suscriptores
+   * @param newPostulante nuevos valores del perfil postulante
+   */
+  updateEstadoPostulanteLocal(newPostulante: PostulantePerfil): void {
+    this._postulanteLocal &#x3D; newPostulante;
+    this.postulanteLocal.next(this._postulanteLocal)
+  }
+
+  /**
+   * actualiza el estado interno de tienePerfil y lo emite a los suscriptores
+   * @param newState nuevo valor boolean
+   */
+  updateEstadoTienePerfil(newState: boolean): void {
+    this._tienePerfil &#x3D; newState;
+    this.tienePerfil.next(this._tienePerfil)
+  }
+
+  // ************************************* ADMINISTRAR CV FILE ***********************************************/
+
+  /**
+   * Descarga archivo de CV desde el backend
+   * @returns 
+   */
+  async getFileCv(): Promise&lt;Blob | null&gt; {
+    try {
+      const response &#x3D; await this.http.get(&#x60;${API_BASE}${this._postulanteLocal.rutacv}&#x60;, { responseType: &#x27;blob&#x27; }).toPromise();
+      if (response) {
+        const cvFile &#x3D; new Blob([response], { type: &#x27;application/pdf&#x27; });
+        return cvFile
+      } else {
+        console.error(&#x27;La respuesta de la solicitud HTTP es undefined.&#x27;);
+        return null
+      }
+    } catch (error) {
+      console.error(error)
+      throw error;
+    }
+  }
+
+  /**
+   * Acción HTTP Request DELETE de archivo de CV subido
+   */
+  async deleteFileCv(): Promise&lt;void&gt; {
+    this.http.delete&lt;any&gt;(&#x60;${API_BASE}/${API_PATH.SUBIR_CV}/${this._postulanteLocal.idpostulante}&#x60;).subscribe(
+      () &#x3D;&gt; {
+        this.obtenerPostulanteByIdUsuario(this._postulanteLocal.idusuario)
+      },
+      (error) &#x3D;&gt; {
+        throw error;
+      }
+    );
+  }
+
+  /**
+   * Acción HTTP Request POST para subir archivo al backend
+   */
+  async postFileCv(formData: FormData): Promise&lt;void&gt; {
+    this.http.post&lt;any&gt;(&#x60;${API_BASE}/${API_PATH.SUBIR_CV}/${this._postulanteLocal.idpostulante}&#x60;, formData).subscribe(
+      (response) &#x3D;&gt; {
+        this.obtenerPostulanteByIdUsuario(this._postulanteLocal.idusuario)
+      },
+      (error) &#x3D;&gt; {
+        throw error;
+      }
+    );
+  }
+
+  // ************************************* FUNCIONES AUXILIARES ***********************************************/
+
+  /**
+   * Blanquea los valores del perfil del postulante
+   */
+  blanqueoDePostulanteLocal(): void {
+    this._postulanteLocal &#x3D; {
+      idusuario: this.idUsuario,
+      idpostulante: NaN,
+      fechaalta: &#x27;&#x27;,
+      rutacv: &#x27;&#x27;,
+      estado: false,
+      nombres: &#x27;&#x27;,
+      apellido: &#x27;&#x27;,
+      nombreautopercibido: &#x27;&#x27;,
+      fecnac: &#x27;&#x27;,
+      tipoDoc: this.tipoDni,
+      nrodoc: NaN,
+      nrofiscal: NaN,
+      genero: this.tipoGenero,
+      otro_genero: &#x27;&#x27;,
+      pais: this.pais,
+      estadoCivil: this.estadoCivil,
+      foto: this.foto,
+      tienelicencia: false,
+      tienehijos: false,
+      telefono: NaN,
+      celular: NaN,
+      mail: &#x27;&#x27;,
+      partido: this.partido,
+      provincia: this.provincia,
+      localidad: this.localidad,
+      calle: this.calle,
+      numcalle: NaN,
+      areasIncumbencia: [],
+      filesize: NaN
+    };
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'PostulanteService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

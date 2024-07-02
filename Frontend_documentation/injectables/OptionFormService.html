@@ -1,0 +1,1215 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sbl-municipio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sbl-municipio documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >OptionFormService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/servicios/option-form.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#cache" >cache</a>
+                            </li>
+                            <li>
+                                <a href="#filterTerms" >filterTerms</a>
+                            </li>
+                            <li>
+                                <a href="#urlOption" >urlOption</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#filterOptions" >filterOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getCalles" >getCalles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getData" >getData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getEstadoCivil" >getEstadoCivil</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getGeneros" >getGeneros</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getIdioma" >getIdioma</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getLocalidades" >getLocalidades</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getNivelEducativo" >getNivelEducativo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPaises" >getPaises</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getPartidos" >getPartidos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getProvincias" >getProvincias</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getTipoDoc" >getTipoDoc</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: HttpClient)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/servicios/option-form.service.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpClient</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterOptions"></a>
+                    <span class="name">
+                        <span ><b>filterOptions</b></span>
+                        <a href="#filterOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterOptions(terms: string[], items: any[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="182"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:182</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>terms</td>
+                                            <td>
+                                                        <code>string[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>items</td>
+                                            <td>
+                                                        <code>any[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>any[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCalles"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getCalles</b></span>
+                        <a href="#getCalles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getCalles()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Calle.html" target="_self" >Promise&lt;Calle[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getData"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getData</b></span>
+                        <a href="#getData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getData(path: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:37</a></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Type parameters :</b>
+                            <ul class="type-parameters">
+                                    <li>T</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>path</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;T&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getEstadoCivil"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getEstadoCivil</b></span>
+                        <a href="#getEstadoCivil"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getEstadoCivil()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="143"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/EstadoCivil.html" target="_self" >Promise&lt;EstadoCivil[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGeneros"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getGeneros</b></span>
+                        <a href="#getGeneros"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getGeneros()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="107"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Genero.html" target="_self" >Promise&lt;Genero[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getIdioma"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getIdioma</b></span>
+                        <a href="#getIdioma"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getIdioma()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="167"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:167</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Idioma.html" target="_self" >Promise&lt;Idioma[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLocalidades"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getLocalidades</b></span>
+                        <a href="#getLocalidades"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getLocalidades()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="85"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Localidad.html" target="_self" >Promise&lt;Localidad[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNivelEducativo"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getNivelEducativo</b></span>
+                        <a href="#getNivelEducativo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNivelEducativo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="155"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:155</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/NivelEducativo.html" target="_self" >Promise&lt;NivelEducativo[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPaises"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getPaises</b></span>
+                        <a href="#getPaises"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPaises()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:119</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Pais.html" target="_self" >Promise&lt;Pais[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPartidos"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getPartidos</b></span>
+                        <a href="#getPartidos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPartidos()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Partido.html" target="_self" >Promise&lt;Partido[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getProvincias"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getProvincias</b></span>
+                        <a href="#getProvincias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getProvincias()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/Provincia.html" target="_self" >Promise&lt;Provincia[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTipoDoc"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getTipoDoc</b></span>
+                        <a href="#getTipoDoc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getTipoDoc()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/servicios/option-form.service.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/TipoDocumento.html" target="_self" >Promise&lt;TipoDocumento[]&gt;</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cache"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>cache</b></span>
+                        <a href="#cache"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/servicios/option-form.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterTerms"></a>
+                    <span class="name">
+                        <span ><b>filterTerms</b></span>
+                        <a href="#filterTerms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;desconocido&#x27;, &#x27;desconocida&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/servicios/option-form.service.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlOption"></a>
+                    <span class="name">
+                        <span ><b>urlOption</b></span>
+                        <a href="#urlOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    provincia: &#x60;${API_BASE}/${API_PATH.PROVINCIA}&#x60;,
+    partido: &#x60;${API_BASE}/${API_PATH.PARTIDO}&#x60;,
+    localidad: &#x60;${API_BASE}/${API_PATH.LOCALIDAD}&#x60;,
+    calle: &#x60;${API_BASE}/${API_PATH.CALLE}&#x60;,
+    genero: &#x60;${API_BASE}/${API_PATH.GENERO}&#x60;,
+    pais: &#x60;${API_BASE}/${API_PATH.NACIONALIDAD}&#x60;,
+    tipo_doc: &#x60;${API_BASE}/${API_PATH.TIPO_DNI}&#x60;,
+    estado_civil: &#x60;${API_BASE}/${API_PATH.ESTADO_CIVIL}&#x60;,
+    nivel_educativo: &#x60;${API_BASE}/${API_PATH.NIVEL_EDUCATIVO}&#x60;,
+    idioma: &#x60;${API_BASE}/${API_PATH.IDIOMA}&#x60;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/servicios/option-form.service.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { API_BASE, API_PATH, MAXIMOS } from &#x27;src/constants&#x27;;
+import { Provincia } from &#x27;../interfaces/Provincia&#x27;;
+import { Partido } from &#x27;../interfaces/Partido&#x27;;
+import { Localidad } from &#x27;../interfaces/Localidad&#x27;;
+import { Calle } from &#x27;../interfaces/Calle&#x27;;
+import { Genero } from &#x27;../interfaces/Genero&#x27;;
+import { Pais } from &#x27;../interfaces/Pais&#x27;;
+import { TipoDocumento } from &#x27;../interfaces/TipoDocumento&#x27;;
+import { EstadoCivil } from &#x27;../interfaces/EstadoCivil&#x27;;
+import { NivelEducativo } from &#x27;../interfaces/NivelEducativo&#x27;;
+import { Idioma } from &#x27;../interfaces/Idioma&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class OptionFormService {
+  urlOption: any &#x3D; {
+    provincia: &#x60;${API_BASE}/${API_PATH.PROVINCIA}&#x60;,
+    partido: &#x60;${API_BASE}/${API_PATH.PARTIDO}&#x60;,
+    localidad: &#x60;${API_BASE}/${API_PATH.LOCALIDAD}&#x60;,
+    calle: &#x60;${API_BASE}/${API_PATH.CALLE}&#x60;,
+    genero: &#x60;${API_BASE}/${API_PATH.GENERO}&#x60;,
+    pais: &#x60;${API_BASE}/${API_PATH.NACIONALIDAD}&#x60;,
+    tipo_doc: &#x60;${API_BASE}/${API_PATH.TIPO_DNI}&#x60;,
+    estado_civil: &#x60;${API_BASE}/${API_PATH.ESTADO_CIVIL}&#x60;,
+    nivel_educativo: &#x60;${API_BASE}/${API_PATH.NIVEL_EDUCATIVO}&#x60;,
+    idioma: &#x60;${API_BASE}/${API_PATH.IDIOMA}&#x60;
+  }
+  filterTerms: any &#x3D; [&#x27;desconocido&#x27;, &#x27;desconocida&#x27;]
+
+  private cache: { [resource: string]: any } &#x3D; {}; // Objeto para almacenar los datos en caché
+
+  constructor(private http: HttpClient) { }
+
+  async getData&lt;T&gt;(path: string): Promise&lt;T&gt; {
+    // Verificar si los datos ya están en caché
+    if (this.cache[path]) {
+      return this.cache[path];
+    }
+    // si no esta cacheado hace el fetch
+    let intento &#x3D; 0;
+    while (intento &lt; MAXIMOS.MAX_INTENTOS_FETCH) {
+      try {
+        const response &#x3D; await this.http.get&lt;T&gt;(path).toPromise();
+        if (response) {
+          this.cache[path] &#x3D; response;
+          return response;
+        } else {
+          throw new Error(&#x27;Respuesta indefinida&#x27;);
+        }
+      } catch (error: any) {
+        console.error(&#x60;Error en el intento ${intento + 1} de ${MAXIMOS.MAX_INTENTOS_FETCH}: ${error}&#x60;);
+        intento++;
+      }
+    }
+    throw new Error(&#x60;No se pudo obtener la respuesta después de ${MAXIMOS.MAX_INTENTOS_FETCH} intentos&#x60;);
+  }
+
+  async getProvincias(): Promise&lt;Provincia[]&gt; {
+    let url: string &#x3D; this.urlOption.provincia
+    try {
+      const provincias: Provincia[] &#x3D; await this.getData&lt;Provincia[]&gt;(url);
+      // const fitredData: Provincia[] &#x3D; this.filterOptions(this.filterTerms.provincia, provincias)
+      // return fitredData;
+      return provincias;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+  async getPartidos(): Promise&lt;Partido[]&gt; {
+    let url: string &#x3D; this.urlOption.partido
+    try {
+      const partidos: Partido[] &#x3D; await this.getData&lt;Partido[]&gt;(url);
+      return partidos;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+  async getLocalidades(): Promise&lt;Localidad[]&gt; {
+    let url: string &#x3D; this.urlOption.localidad
+    try {
+      const localidad: Localidad[] &#x3D; await this.getData&lt;Localidad[]&gt;(url);
+      return localidad;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+  async getCalles(): Promise&lt;Calle[]&gt; {
+    let url: string &#x3D; this.urlOption.calle
+    try {
+      const calle: Calle[] &#x3D; await this.getData&lt;Calle[]&gt;(url);
+      return calle;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+  async getGeneros(): Promise&lt;Genero[]&gt; {
+    let url: string &#x3D; this.urlOption.genero
+    try {
+      const generos: Genero[] &#x3D; await this.getData&lt;Genero[]&gt;(url);
+
+      return generos;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+  async getPaises(): Promise&lt;Pais[]&gt; {
+    let url: string &#x3D; this.urlOption.pais;
+    try {
+      const paises: Pais[] &#x3D; await this.getData&lt;Pais[]&gt;(url);
+
+      return paises;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+  async getTipoDoc(): Promise&lt;TipoDocumento[]&gt; {
+    let url: string &#x3D; this.urlOption.tipo_doc;
+    try {
+      const tipoDocs: TipoDocumento[] &#x3D; await this.getData&lt;TipoDocumento[]&gt;(url);
+
+      return tipoDocs;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+  async getEstadoCivil(): Promise&lt;EstadoCivil[]&gt; {
+    let url: string &#x3D; this.urlOption.estado_civil
+    try {
+      const estado_civil: EstadoCivil[] &#x3D; await this.getData&lt;EstadoCivil[]&gt;(url);
+
+      return estado_civil;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+  async getNivelEducativo(): Promise&lt;NivelEducativo[]&gt; {
+    let url: string &#x3D; this.urlOption.nivel_educativo;
+    try {
+      const nivel_educativo: NivelEducativo[] &#x3D; await this.getData&lt;NivelEducativo[]&gt;(url);
+
+      return nivel_educativo;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+  async getIdioma(): Promise&lt;Idioma[]&gt; {
+    let url: string &#x3D; this.urlOption.idioma;
+    try {
+      const idioma: Idioma[] &#x3D; await this.getData&lt;Idioma[]&gt;(url);
+
+      return idioma;
+    } catch (error) {
+      console.error(&#x27;Error al obtener datos de &#x27; + url, error);
+      throw error;
+    }
+  }
+
+
+  //*********************************** FILTER FUNCTION ************************************/
+
+  filterOptions(terms: string[], items: any[]): any[] {
+
+    let newArray &#x3D; [...items]
+    terms.forEach((term) &#x3D;&gt; {
+      newArray &#x3D; newArray.filter((item) &#x3D;&gt; {
+        return item.descripcion.toLowerCase() !&#x3D; term.toLowerCase()
+      })
+    })
+    return newArray;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'OptionFormService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

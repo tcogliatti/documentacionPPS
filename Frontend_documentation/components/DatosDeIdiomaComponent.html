@@ -1,0 +1,1052 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sbl-municipio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sbl-municipio documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DatosDeIdiomaComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-datos-idioma</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./datos-de-idioma.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./datos-de-idioma.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#childComponent" >childComponent</a>
+                            </li>
+                            <li>
+                                <a href="#httpError" >httpError</a>
+                            </li>
+                            <li>
+                                <a href="#idiomasBack" >idiomasBack</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading" >isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#urlFormExperienciaLaboral" >urlFormExperienciaLaboral</a>
+                            </li>
+                            <li>
+                                <a href="#urlFormInformatica" >urlFormInformatica</a>
+                            </li>
+                            <li>
+                                <a href="#urlReload" >urlReload</a>
+                            </li>
+                            <li>
+                                <a href="#urlSiguiente" >urlSiguiente</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarInfo" >actualizarInfo</a>
+                            </li>
+                            <li>
+                                <a href="#enviar" >enviar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#volver" >volver</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, optService: <a href="../injectables/OptionFormService.html" target="_self">OptionFormService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:61</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>optService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/OptionFormService.html" target="_self" >OptionFormService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarInfo"></a>
+                    <span class="name">
+                        <span ><b>actualizarInfo</b></span>
+                        <a href="#actualizarInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarInfo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>TODO: Cuando el componente se separe, esta debera actualizar la info de su hijo(FormNivelEducativo). Y si todo
+sale bien reien ahi navegar hacia cursos</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enviar"></a>
+                    <span class="name">
+                        <span ><b>enviar</b></span>
+                        <a href="#enviar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enviar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="volver"></a>
+                    <span class="name">
+                        <span ><b>volver</b></span>
+                        <a href="#volver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>volver()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="106"
+                                    class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="childComponent"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>childComponent</b></span>
+                        <a href="#childComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/FormDatosCvIdiomaComponent.html" target="_self" >FormDatosCvIdiomaComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(FormDatosCvIdiomaComponent)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="httpError"></a>
+                    <span class="name">
+                        <span ><b>httpError</b></span>
+                        <a href="#httpError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Flag para manejar el componente de error cuando sea necesario</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="idiomasBack"></a>
+                    <span class="name">
+                        <span ><b>idiomasBack</b></span>
+                        <a href="#idiomasBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Idioma.html" target="_self" >Idioma[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Opciones del menu del formualrio</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLoading"></a>
+                    <span class="name">
+                        <span ><b>isLoading</b></span>
+                        <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Flag para manejar el loader</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlFormExperienciaLaboral"></a>
+                    <span class="name">
+                        <span ><b>urlFormExperienciaLaboral</b></span>
+                        <a href="#urlFormExperienciaLaboral"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;/${ROUTES.DATOS_CV}/${ROUTES.EXPERIENCIA_LABORAL}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlFormInformatica"></a>
+                    <span class="name">
+                        <span ><b>urlFormInformatica</b></span>
+                        <a href="#urlFormInformatica"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;/${ROUTES.DATOS_CV}/${ROUTES.INFORMATICA}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlReload"></a>
+                    <span class="name">
+                        <span ><b>urlReload</b></span>
+                        <a href="#urlReload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;/${ROUTES.DATOS_CV}/${ROUTES.IDIOMA}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>URL del formulario actual</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlSiguiente"></a>
+                    <span class="name">
+                        <span ><b>urlSiguiente</b></span>
+                        <a href="#urlSiguiente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;/${ROUTES.DATOS_CV}/${ROUTES.INFORMATICA}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>URL del proximo formulario</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { NivelEducativo } from &#x27;src/app/interfaces/NivelEducativo&#x27;;
+import { OptionFormService } from &#x27;src/app/servicios/option-form.service&#x27;;
+import { ROUTES } from &#x27;src/constants&#x27;;
+import { FormDatosCvNivelEducativoComponent } from &#x27;../../form-datos-cv-nivel-educativo/form-datos-cv-nivel-educativo.component&#x27;;
+import { Idioma } from &#x27;src/app/interfaces/Idioma&#x27;;
+import { FormDatosCvIdiomaComponent } from &#x27;../../form-datos-cv-idioma/form-datos-cv-idioma.component&#x27;;
+
+@Component({
+  selector: &#x27;app-datos-idioma&#x27;,
+  templateUrl: &#x27;./datos-de-idioma.component.html&#x27;,
+  styleUrls: [&#x27;./datos-de-idioma.component.css&#x27;]
+})
+
+/**
+ * Se encarga de contener el formulario y las cargas de idiomas
+ * Se encarga de renderizar los mensajes de Loading y error 404
+ * Se encarga de realizar el fetching de datos a la base de datos para renderizar el formulario con los datos de las opciones
+ */
+export class DatosDeIdiomaComponent implements OnInit {
+
+  /**
+   * URL del proximo formulario
+   */
+  urlSiguiente: string &#x3D; &#x60;/${ROUTES.DATOS_CV}/${ROUTES.INFORMATICA}&#x60;;
+
+  /**
+   * URL del formulario actual
+   */
+  urlReload: string &#x3D; &#x60;/${ROUTES.DATOS_CV}/${ROUTES.IDIOMA}&#x60;;
+
+  /**
+   * Opciones del menu del formualrio
+   */
+  idiomasBack: Idioma[] &#x3D; [];
+
+  // url para dirigirse al formulario anterior de idioma
+  urlFormExperienciaLaboral: string &#x3D; &#x60;/${ROUTES.DATOS_CV}/${ROUTES.EXPERIENCIA_LABORAL}&#x60;;
+
+  // url para dirigirse al formulario siguiente de informática
+  urlFormInformatica: string &#x3D; &#x60;/${ROUTES.DATOS_CV}/${ROUTES.INFORMATICA}&#x60;;
+  /**
+   * Flag para manejar el componente de error cuando sea necesario
+   */
+  httpError: boolean &#x3D; false;
+
+  /**
+   * Flag para manejar el loader
+   */
+  isLoading: boolean &#x3D; true;
+
+
+  // TODO
+  // Para ver:
+
+
+  // /**
+  //  * acceso al hijo del tipo : DatosDeIdiomaComponent
+  //  */
+  @ViewChild(FormDatosCvIdiomaComponent) childComponent!: FormDatosCvIdiomaComponent;
+
+  constructor(private router: Router, private optService: OptionFormService) { }
+
+  async ngOnInit(): Promise&lt;void&gt; {
+    window.scrollTo(0, 0)
+    try {
+      // Obtenemos la informacion necesaria para renderizar el formulario
+      this.idiomasBack &#x3D; await this.optService.getIdioma();
+      this.isLoading &#x3D; false;
+      this.httpError &#x3D; false;
+    } catch (error) {
+      // Si algo salio mal mostramos condicionalemente el componente de Error
+      this.isLoading &#x3D; false;
+      this.httpError &#x3D; true;
+      console.log(&quot;Error al obtener idiomas front: &quot; + error);
+    }
+  }
+
+  /**
+   * TODO: Cuando el componente se separe, esta debera actualizar la info de su hijo(FormNivelEducativo). Y si todo
+   * sale bien reien ahi navegar hacia cursos
+   */
+  actualizarInfo() {
+    // Le solicita al componente instanciado (formulario) que actualice la información, devuelve un boolean.
+    if (this.childComponent.actualizarInfo()) {
+      try {
+        this.router.navigate([this.urlSiguiente]);
+      } catch (error) {
+        this.httpError &#x3D; true;
+      }
+    }
+  }
+
+  /* boton que redirige hacia la seccion de informática */
+  enviar() {
+    if (this.childComponent.actualizarInfo()) {
+      try {
+        this.router.navigate([this.urlFormInformatica]);
+      } catch (error) {
+        this.httpError &#x3D; true;
+      }
+    }
+  }
+  /* boton que redirige la seccion de experiencia laboral */
+  volver() {
+    if (this.childComponent.actualizarInfo()) {
+      try {
+        this.router.navigate([this.urlFormExperienciaLaboral]);
+      } catch (error) {
+        this.httpError &#x3D; true;
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div [ngClass]&#x3D;&quot;{&#x27;d-none&#x27;: httpError}&quot;&gt;
+    &lt;div [ngClass]&#x3D;&quot;{&#x27;d-none&#x27;: isLoading}&quot;&gt;
+        &lt;app-form-datos-cv-idioma
+            [idiomasBack]&#x3D;&quot;idiomasBack&quot;&gt;
+        &lt;/app-form-datos-cv-idioma&gt;
+
+        &lt;!-- Botones volver, siguiente y cancelar --&gt;
+        &lt;div class&#x3D;&quot;d-flex flex-column justify-content-center align-items-center gap-2 col-12 my-3 my-lg-4&quot;&gt;        
+            &lt;div class&#x3D;&quot;container d-flex justify-content-center col-12 gap-2&quot;&gt;
+                &lt;button (click)&#x3D;&#x27;volver()&#x27; class&#x3D;&quot;btn btn-gris texto-claro col-5 col-md-3 &quot;&gt;
+                    &lt;i class&#x3D;&quot;bi bi-arrow-left&quot;&gt;&lt;/i&gt; Volver
+                &lt;/button&gt;
+                &lt;button (click)&#x3D;&#x27;enviar()&#x27; class&#x3D;&quot;btn btn-siguiente texto-claro col-5 col-md-3 &quot;&gt;
+                    Siguiente &lt;i class&#x3D;&quot;bi bi-arrow-right&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;div class&#x3D;&quot;container d-flex justify-content-center &quot;&gt;
+                &lt;button data-bs-toggle&#x3D;&quot;modal&quot; data-bs-target&#x3D;&quot;#modalCancelar&quot; class&#x3D;&quot;btn btn-rosa texto-claro col-5 mt-2 col-md-3&quot;&gt;
+                    Cancelar
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- mensaje de error de fetch de datos --&gt;
+&lt;app-mensaje-error-fetch *ngIf&#x3D;&quot;httpError&quot; [urlReload]&#x3D;&quot;urlReload&quot;&gt;&lt;/app-mensaje-error-fetch&gt;
+
+&lt;!-- loader --&gt;
+&lt;app-loader *ngIf&#x3D;&quot;!httpError &amp;&amp; isLoading&quot;&gt;&lt;/app-loader&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./datos-de-idioma.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div [ngClass]="{\'d-none\': httpError}">    <div [ngClass]="{\'d-none\': isLoading}">        <app-form-datos-cv-idioma            [idiomasBack]="idiomasBack">        </app-form-datos-cv-idioma>        <!-- Botones volver, siguiente y cancelar -->        <div class="d-flex flex-column justify-content-center align-items-center gap-2 col-12 my-3 my-lg-4">                    <div class="container d-flex justify-content-center col-12 gap-2">                <button (click)=\'volver()\' class="btn btn-gris texto-claro col-5 col-md-3 ">                    <i class="bi bi-arrow-left"></i> Volver                </button>                <button (click)=\'enviar()\' class="btn btn-siguiente texto-claro col-5 col-md-3 ">                    Siguiente <i class="bi bi-arrow-right"></i>                </button>            </div>            <div class="container d-flex justify-content-center ">                <button data-bs-toggle="modal" data-bs-target="#modalCancelar" class="btn btn-rosa texto-claro col-5 mt-2 col-md-3">                    Cancelar                </button>            </div>        </div>    </div></div><!-- mensaje de error de fetch de datos --><app-mensaje-error-fetch *ngIf="httpError" [urlReload]="urlReload"></app-mensaje-error-fetch><!-- loader --><app-loader *ngIf="!httpError && isLoading"></app-loader></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreasDeIncumbenciaComponent', 'selector': 'app-areas-de-incumbencia'},{'name': 'BotonEditarComponent', 'selector': 'app-boton-editar'},{'name': 'DatosDeContactoComponent', 'selector': 'app-datos-de-contacto'},{'name': 'DatosDeCursoComponent', 'selector': 'app-datos-de-curso'},{'name': 'DatosDeIdiomaComponent', 'selector': 'app-datos-idioma'},{'name': 'DatosDeNivelEducativoComponent', 'selector': 'app-datos-nivel-educativo'},{'name': 'DatosExperienciaLaboralComponent', 'selector': 'app-datos-experiencia-laboral'},{'name': 'DatosInformaticaComponent', 'selector': 'app-datos-informatica'},{'name': 'DatosPersonalesComponent', 'selector': 'app-datos-personales'},{'name': 'DescargarCvAutogeneradoComponent', 'selector': 'app-descargar-cv-autogenerado'},{'name': 'EditarFormComponent', 'selector': 'app-editar-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormAreasDeIncumbenciaComponent', 'selector': 'app-form-areas-de-incumbencia'},{'name': 'FormDatosCvCursoComponent', 'selector': 'app-form-datos-cv-curso'},{'name': 'FormDatosCvIdiomaComponent', 'selector': 'app-form-datos-cv-idioma'},{'name': 'FormDatosCvNivelEducativoComponent', 'selector': 'app-form-datos-cv-nivel-educativo'},{'name': 'FormDatosDeContactoComponent', 'selector': 'app-form-datos-de-contacto'},{'name': 'FormDatosPersonalesComponent', 'selector': 'app-form-datos-personales'},{'name': 'FormExperienciaLaboralComponent', 'selector': 'app-form-experiencia-laboral'},{'name': 'FormInformaticaComponent', 'selector': 'app-form-informatica'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LayoutFlowFormComponent', 'selector': 'app-layout-flow-form'},{'name': 'LayoutFlowFormCvComponent', 'selector': 'app-layout-flow-form-cv'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MensajeErrorFetchComponent', 'selector': 'app-mensaje-error-fetch'},{'name': 'PrincipalComponent', 'selector': 'app-principal'},{'name': 'ProgressBarFormComponent', 'selector': 'app-progress-bar-form'},{'name': 'ResumenComponent', 'selector': 'app-resumen'},{'name': 'ScreenFinCargaCvComponent', 'selector': 'app-screen-fin-carga-cv'},{'name': 'ScreenFinDeCargaComponent', 'selector': 'app-screen-fin-de-carga'},{'name': 'SelectAutocompleteComponent', 'selector': 'app-select-autcomplete'},{'name': 'SubirArchivoCvComponent', 'selector': 'app-subir-archivo-cv'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DatosDeIdiomaComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DatosDeIdiomaComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

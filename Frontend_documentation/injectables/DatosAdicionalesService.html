@@ -1,0 +1,1944 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sbl-municipio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sbl-municipio documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >DatosAdicionalesService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/servicios/datos-adicionales.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_datosCVLocal" >_datosCVLocal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_noTieneDatosCV" >_noTieneDatosCV</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#conocimientosInformatica" >conocimientosInformatica</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#curso" >curso</a>
+                            </li>
+                            <li>
+                                <a href="#datosCVLocal" >datosCVLocal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#educacionPostulante" >educacionPostulante</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#experienciaLaboral" >experienciaLaboral</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#idioma" >idioma</a>
+                            </li>
+                            <li>
+                                <a href="#noTieneDatosCV" >noTieneDatosCV</a>
+                            </li>
+                            <li>
+                                <a href="#perfilPostulanteSuscription" >perfilPostulanteSuscription</a>
+                            </li>
+                            <li>
+                                <a href="#postulanteForm" >postulanteForm</a>
+                            </li>
+                            <li>
+                                <a href="#postulanteObservable$" >postulanteObservable$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#urlGetDatosCVPorIdPostulante" >urlGetDatosCVPorIdPostulante</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#urlPostDatosCV" >urlPostDatosCV</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#urlPutDatosCV" >urlPutDatosCV</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#actualizarCursoPostulante" >actualizarCursoPostulante</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#actualizarEducacionPostulante" >actualizarEducacionPostulante</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#actualizarExpLaboralPostulante" >actualizarExpLaboralPostulante</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#actualizarIdiomaPostulante" >actualizarIdiomaPostulante</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#actualizarInformaticaPostulante" >actualizarInformaticaPostulante</a>
+                            </li>
+                            <li>
+                                <a href="#blanqueoDeDatosCV" >blanqueoDeDatosCV</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#convertirAEducacionPostulanteRequestDTO" >convertirAEducacionPostulanteRequestDTO</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getDatosCVPorIdPostulante" >getDatosCVPorIdPostulante</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#obtenerDatosCVByIdPostulante" >obtenerDatosCVByIdPostulante</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#persistDatosCV" >persistDatosCV</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#postDatosAdicionales" >postDatosAdicionales</a>
+                            </li>
+                            <li>
+                                <a href="#updateEstadoDatosCVLocal" >updateEstadoDatosCVLocal</a>
+                            </li>
+                            <li>
+                                <a href="#updateEstadoNoTieneDatosCV" >updateEstadoNoTieneDatosCV</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: HttpClient, postulanteService: <a href="../injectables/PostulanteService.html" target="_self">PostulanteService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:53</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpClient</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>postulanteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PostulanteService.html" target="_self" >PostulanteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarCursoPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>actualizarCursoPostulante</b></span>
+                        <a href="#actualizarCursoPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>actualizarCursoPostulante()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="184"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:184</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualizar datos de Curso postulante</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarEducacionPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>actualizarEducacionPostulante</b></span>
+                        <a href="#actualizarEducacionPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>actualizarEducacionPostulante()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="159"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:159</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualizar datos de educacion postulante</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarExpLaboralPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>actualizarExpLaboralPostulante</b></span>
+                        <a href="#actualizarExpLaboralPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>actualizarExpLaboralPostulante()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="210"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:210</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualizar datos de Exp Laboral postulante</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarIdiomaPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>actualizarIdiomaPostulante</b></span>
+                        <a href="#actualizarIdiomaPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>actualizarIdiomaPostulante()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="234"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:234</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualizar datos de Idioma postulante</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarInformaticaPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>actualizarInformaticaPostulante</b></span>
+                        <a href="#actualizarInformaticaPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>actualizarInformaticaPostulante()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="259"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:259</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualizar datos de Informatica postulante</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="blanqueoDeDatosCV"></a>
+                    <span class="name">
+                        <span ><b>blanqueoDeDatosCV</b></span>
+                        <a href="#blanqueoDeDatosCV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>blanqueoDeDatosCV()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="335"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:335</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Blanquea los Datos de Adiconales</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertirAEducacionPostulanteRequestDTO"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>convertirAEducacionPostulanteRequestDTO</b></span>
+                        <a href="#convertirAEducacionPostulanteRequestDTO"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertirAEducacionPostulanteRequestDTO(arreglo: <a href="../interfaces/EducacionPostulante.html" target="_self">EducacionPostulante[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="287"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:287</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Se encargara de mapear el arreglo local de EducacionPostulante a la clase
+EducacionPostulanteRequestDTO del backend.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>arreglo</td>
+                                            <td>
+                                                            <code><a href="../interfaces/EducacionPostulante.html" target="_self" >EducacionPostulante[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>EducacionPostulante[]</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>EducacionPostulanteRequestDTO[]</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>EducacionPostulanteRequestDTO[]</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDatosCVPorIdPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getDatosCVPorIdPostulante</b></span>
+                        <a href="#getDatosCVPorIdPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getDatosCVPorIdPostulante(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Se encarga de hacer el HTTP GET a la API del backend para traer los datos adicionales del usuario
+Segun su idpostulante</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>de usuario</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/DatosAdicionales.html" target="_self" >Promise&lt;DatosAdicionales&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>promesa con el perfil del postulante si es que lo encuentra</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="obtenerDatosCVByIdPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>obtenerDatosCVByIdPostulante</b></span>
+                        <a href="#obtenerDatosCVByIdPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>obtenerDatosCVByIdPostulante()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene los DatosCV almacenado en el backend
+Actualiza los estados tieneDatosCV y datosCV</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="persistDatosCV"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>persistDatosCV</b></span>
+                        <a href="#persistDatosCV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>persistDatosCV()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="120"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Persiste contra la API los datos adicionales</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postDatosAdicionales"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>postDatosAdicionales</b></span>
+                        <a href="#postDatosAdicionales"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>postDatosAdicionales()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="136"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:136</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Se encarga de hacer el HTTP POST a la API del Backend</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/DatosAdicionales.html" target="_self" >Promise&lt;DatosAdicionales&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>retorno de la promesa con el perfil del postulante</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateEstadoDatosCVLocal"></a>
+                    <span class="name">
+                        <span ><b>updateEstadoDatosCVLocal</b></span>
+                        <a href="#updateEstadoDatosCVLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateEstadoDatosCVLocal(newDatosCV: <a href="../interfaces/DatosAdicionales.html" target="_self">DatosAdicionales</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="309"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:309</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza el estado interno de los datos adicionales del postulante
+con un nuevo valor. El cual se emite a todos los suscriptores</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>newDatosCV</td>
+                                            <td>
+                                                            <code><a href="../interfaces/DatosAdicionales.html" target="_self" >DatosAdicionales</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>nuevos valores de los datos adicionales</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateEstadoNoTieneDatosCV"></a>
+                    <span class="name">
+                        <span ><b>updateEstadoNoTieneDatosCV</b></span>
+                        <a href="#updateEstadoNoTieneDatosCV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateEstadoNoTieneDatosCV(newState: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="327"
+                                    class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:327</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Actualiza el estado interno de tienePerfil y lo emite a los suscriptores</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>newState</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>nuevo valor boolean</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_datosCVLocal"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_datosCVLocal</b></span>
+                        <a href="#_datosCVLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DatosAdicionales.html" target="_self" >DatosAdicionales</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:46</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado que mantiene los datos del cv de postulante del lado del cliente</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_noTieneDatosCV"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>_noTieneDatosCV</b></span>
+                        <a href="#_noTieneDatosCV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:52</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Estado que notifica si el usuario tiene o no datos adicionales</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="conocimientosInformatica"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>conocimientosInformatica</b></span>
+                        <a href="#conocimientosInformatica"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ConocimientoInformatica.html" target="_self" >ConocimientoInformatica[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="curso"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>curso</b></span>
+                        <a href="#curso"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Curso.html" target="_self" >Curso[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="datosCVLocal"></a>
+                    <span class="name">
+                        <span ><b>datosCVLocal</b></span>
+                        <a href="#datosCVLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DatosAdicionales.html" target="_self" >BehaviorSubject&lt;DatosAdicionales&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;DatosAdicionales&gt;(this._datosCVLocal)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="educacionPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>educacionPostulante</b></span>
+                        <a href="#educacionPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/EducacionPostulante.html" target="_self" >EducacionPostulante[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:23</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Declaración e inicialización de objetos que son atributos del perfil del postulante</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="experienciaLaboral"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>experienciaLaboral</b></span>
+                        <a href="#experienciaLaboral"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ExperienciaLaboral.html" target="_self" >ExperienciaLaboral[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="idioma"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>idioma</b></span>
+                        <a href="#idioma"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>IdiomaPostulante[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noTieneDatosCV"></a>
+                    <span class="name">
+                        <span ><b>noTieneDatosCV</b></span>
+                        <a href="#noTieneDatosCV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>BehaviorSubject&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new BehaviorSubject&lt;boolean&gt;(this._noTieneDatosCV)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="perfilPostulanteSuscription"></a>
+                    <span class="name">
+                        <span ><b>perfilPostulanteSuscription</b></span>
+                        <a href="#perfilPostulanteSuscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postulanteForm"></a>
+                    <span class="name">
+                        <span ><b>postulanteForm</b></span>
+                        <a href="#postulanteForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >PostulantePerfil</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postulanteObservable$"></a>
+                    <span class="name">
+                        <span ><b>postulanteObservable$</b></span>
+                        <a href="#postulanteObservable$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >Observable&lt;PostulantePerfil&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:39</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Variables de control del postulantePerfil</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlGetDatosCVPorIdPostulante"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>urlGetDatosCVPorIdPostulante</b></span>
+                        <a href="#urlGetDatosCVPorIdPostulante"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${API_BASE}/${API_PATH.DATOS_CV}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlPostDatosCV"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>urlPostDatosCV</b></span>
+                        <a href="#urlPostDatosCV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${API_BASE}/${API_PATH.DATOS_CV}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:32</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Declaración e inicialización de URLs para ruteo y navegación</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlPutDatosCV"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>urlPutDatosCV</b></span>
+                        <a href="#urlPutDatosCV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;${API_BASE}/${API_PATH.DATOS_CV}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/servicios/datos-adicionales.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { EducacionPostulante } from &#x27;../interfaces/EducacionPostulante&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { API_BASE, API_PATH } from &#x27;src/constants&#x27;;
+import { BehaviorSubject, Observable, Subscription } from &#x27;rxjs&#x27;;
+import { PostulantePerfil } from &#x27;../interfaces/PostulantePerfil&#x27;;
+import { PostulanteService } from &#x27;./postulante.service&#x27;;
+import { Curso } from &#x27;../interfaces/Curso&#x27;;
+import { ExperienciaLaboral } from &#x27;../interfaces/ExperienciaLaboral&#x27;;
+import { ConocimientoInformatica } from &#x27;../interfaces/ConocimientoInformatica&#x27;;
+import { DatosAdicionales } from &#x27;../interfaces/DatosAdicionales&#x27;;
+import { IdiomaPostulante } from &#x27;../interfaces/IdiomaPostulante&#x27;;
+import { EducacionPostulanteRequestDTO } from &#x27;../interfaces/EducacionPostulanteRequestDTO&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class DatosAdicionalesService {
+
+  /**
+   * Declaración e inicialización de objetos que son atributos del perfil del postulante
+   */
+  private educacionPostulante: EducacionPostulante[] &#x3D; [];
+  private curso: Curso[] &#x3D; [];
+  private experienciaLaboral: ExperienciaLaboral[] &#x3D; [];
+  private conocimientosInformatica: ConocimientoInformatica[] &#x3D; [];
+  private idioma: IdiomaPostulante[] &#x3D; [];
+
+  /**
+   * Declaración e inicialización de URLs para ruteo y navegación
+   */
+  private urlPostDatosCV: string &#x3D; &#x60;${API_BASE}/${API_PATH.DATOS_CV}&#x60;;
+  private urlPutDatosCV: string &#x3D; &#x60;${API_BASE}/${API_PATH.DATOS_CV}&#x60;;
+  private urlGetDatosCVPorIdPostulante: string &#x3D; &#x60;${API_BASE}/${API_PATH.DATOS_CV}&#x60;;
+
+  /**
+   * Variables de control del postulantePerfil
+   */
+  postulanteObservable$: Observable&lt;PostulantePerfil&gt;;
+  perfilPostulanteSuscription: Subscription;
+  postulanteForm!: PostulantePerfil;
+
+  /**
+   * Estado que mantiene los datos del cv de postulante del lado del cliente
+   */
+  private _datosCVLocal!: DatosAdicionales;
+  datosCVLocal: BehaviorSubject&lt;DatosAdicionales&gt; &#x3D; new BehaviorSubject&lt;DatosAdicionales&gt;(this._datosCVLocal);
+
+  /**
+   * Estado que notifica si el usuario tiene o no datos adicionales
+   */
+  private _noTieneDatosCV: boolean &#x3D; true;
+  noTieneDatosCV: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject&lt;boolean&gt;(this._noTieneDatosCV)
+
+  constructor(private http: HttpClient, private postulanteService: PostulanteService) {
+    this.postulanteObservable$ &#x3D; this.postulanteService.postulanteLocal.asObservable();
+    this.perfilPostulanteSuscription &#x3D; this.postulanteObservable$.subscribe(perfilFromService &#x3D;&gt; {
+      this.postulanteForm &#x3D; { ...perfilFromService };
+      this.blanqueoDeDatosCV();
+      this.updateEstadoDatosCVLocal(this._datosCVLocal);
+      this.obtenerDatosCVByIdPostulante();
+    });
+  }
+
+  /**
+   * Obtiene los DatosCV almacenado en el backend
+   * Actualiza los estados tieneDatosCV y datosCV
+   * @param id es un id de postulante que viene dado por el login
+   */
+  async obtenerDatosCVByIdPostulante() {
+    try {
+      //Checkeamos undefined porque el atributo idpostulante es opcional, y el NaN porque el idpostulante cuando se
+      // inicializa, lo hace con valor NaN. 
+      if (this.postulanteForm.idpostulante &#x3D;&#x3D;&#x3D; undefined || Number.isNaN(this.postulanteForm.idpostulante)) {
+        console.log(&quot;No es posible obtener los datos adiconales, ya que el idpostulante es: &quot; + this.postulanteForm.idpostulante);
+        return
+      }
+      const datosCVByPostulante: DatosAdicionales &#x3D; await this.getDatosCVPorIdPostulante(this.postulanteForm.idpostulante);
+
+      if (datosCVByPostulante.conocimientosInformatica.length &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
+        datosCVByPostulante.educacionPostulante.length &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
+        datosCVByPostulante.experienciaLaboral.length &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
+        datosCVByPostulante.idioma.length &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
+        datosCVByPostulante.curso.length &#x3D;&#x3D;&#x3D; 0) {
+        this.updateEstadoNoTieneDatosCV(true);
+      } else {
+        this.updateEstadoNoTieneDatosCV(false);
+      }
+      this.updateEstadoDatosCVLocal(datosCVByPostulante)
+
+    } catch (error) {
+      this.updateEstadoNoTieneDatosCV(true);
+      console.error(&quot;Error al obtener los datos adicionales: &quot;, error);
+    }
+  }
+
+  /**
+   * Se encarga de hacer el HTTP GET a la API del backend para traer los datos adicionales del usuario
+   * Segun su idpostulante
+   * @param id de usuario
+   * @returns promesa con el perfil del postulante si es que lo encuentra
+   */
+  async getDatosCVPorIdPostulante(id: number): Promise&lt;DatosAdicionales&gt; {
+    try {
+      const response &#x3D; await this.http.get&lt;any&gt;(&#x60;${this.urlGetDatosCVPorIdPostulante}/${id}&#x60;).toPromise();
+      return response;
+    } catch (error: any) {
+      if (error.status &#x3D;&#x3D;&#x3D; 404) {
+        console.error(&#x60;El postulante con el id ${id}, no posee un datos adicionales&#x60;, error);
+      } else {
+        console.error(&#x27;Error desconocido&#x27;, error);
+      }
+      throw error;
+    }
+  }
+
+  /**
+ * Persiste contra la API los datos adicionales
+ */
+  async persistDatosCV() {
+    try {
+      const newItemResponse: DatosAdicionales &#x3D; await this.postDatosAdicionales();
+      // sincroniza el nuevo valor del estado de los Datos Adicionales y lo emite
+      this.updateEstadoDatosCVLocal(newItemResponse)
+    } catch (error) {
+      // manejo de errores
+      console.log(&#x27;postulanteService, method persistPostulante. Error: &#x27;, error);
+      throw (error)
+    }
+  }
+
+  /**
+ * Se encarga de hacer el HTTP POST a la API del Backend
+ * @returns retorno de la promesa con el perfil del postulante
+ */
+  async postDatosAdicionales(): Promise&lt;DatosAdicionales&gt; {
+    const educacionesDTO: EducacionPostulanteRequestDTO[] &#x3D; this.convertirAEducacionPostulanteRequestDTO(this._datosCVLocal.educacionPostulante);
+    let postData: any &#x3D;
+    {
+      idpostulante: this._datosCVLocal.idpostulante,
+      educacion: educacionesDTO,
+      cursos: this._datosCVLocal.curso,
+      expLaborales: this._datosCVLocal.experienciaLaboral,
+      idiomas: this._datosCVLocal.idioma,
+      informaticas: this._datosCVLocal.conocimientosInformatica
+    }
+    try {
+      const response &#x3D; await this.http.post&lt;any&gt;(this.urlPostDatosCV, postData).toPromise();
+      return response;
+
+    } catch (error) {
+      console.error(&#x27;No se pudo postear los datos adicionales del postulante &#x27;, error)
+      throw error;
+    }
+  }
+  /**
+   * Actualizar datos de educacion postulante
+  */
+  async actualizarEducacionPostulante() {
+    try {
+      // postea al backend y obtiene la respuesta
+      let postData &#x3D; [...this._datosCVLocal.educacionPostulante];
+      let urlUpdate &#x3D; &#x60;${this.urlPutDatosCV}/educacion/${this._datosCVLocal.idpostulante}&#x60;
+      try {
+        const newEducacionPostulante &#x3D; await this.http.put&lt;any&gt;(urlUpdate, postData).toPromise();
+        this._datosCVLocal.educacionPostulante &#x3D; newEducacionPostulante;
+        // sincroniza el nuevo valor del estado del perfil del postulante y lo emitirlo
+        this.updateEstadoDatosCVLocal(this._datosCVLocal)
+      } catch (error) {
+        console.error(&#x27;No se pudo actualizar los datos adicionales &#x27;, error)
+        throw error;
+      }
+
+    } catch (error) {
+      // manejo de errores
+      console.log(&#x27;datosAdicionalesService, method update. Error: &#x27;, error);
+      throw (error)
+    }
+  }
+
+  /**
+  * Actualizar datos de Curso postulante
+  */
+  async actualizarCursoPostulante() {
+    try {
+
+      // postea al backend y obtiene la respuesta
+      let postData &#x3D; [...this._datosCVLocal.curso];
+      let urlUpdate &#x3D; &#x60;${this.urlPutDatosCV}/curso/${this._datosCVLocal.idpostulante}&#x60;
+      try {
+        const newCurso &#x3D; await this.http.put&lt;any&gt;(urlUpdate, postData).toPromise();
+        this._datosCVLocal.curso &#x3D; newCurso;
+        // sincroniza el nuevo valor del estado del perfil del postulante y lo emitirlo
+        this.updateEstadoDatosCVLocal(this._datosCVLocal)
+      } catch (error) {
+        console.error(&#x27;No se pudo actualizar los datos adicionales &#x27;, error)
+        throw error;
+      }
+
+    } catch (error) {
+      // manejo de errores
+      console.log(&#x27;datosAdicionalesService, method update. Error: &#x27;, error);
+      throw (error)
+    }
+  }
+
+  /**
+  * Actualizar datos de Exp Laboral postulante
+  */
+  async actualizarExpLaboralPostulante() {
+    try {
+      // postea al backend y obtiene la respuesta
+      let postData &#x3D; [...this._datosCVLocal.experienciaLaboral];
+      let urlUpdate &#x3D; &#x60;${this.urlPutDatosCV}/experiencia-laboral/${this._datosCVLocal.idpostulante}&#x60;
+      try {
+        const newExpLaboral &#x3D; await this.http.put&lt;any&gt;(urlUpdate, postData).toPromise();
+        this._datosCVLocal.experienciaLaboral &#x3D; newExpLaboral;
+        // sincroniza el nuevo valor del estado del perfil del postulante y lo emitirlo
+        this.updateEstadoDatosCVLocal(this._datosCVLocal)
+      } catch (error) {
+        console.error(&#x27;No se pudo actualizar los datos adicionales &#x27;, error)
+        throw error;
+      }
+    } catch (error) {
+      // manejo de errores
+      console.log(&#x27;datosAdicionalesService, method update. Error: &#x27;, error);
+      throw (error)
+    }
+  }
+
+  /**
+* Actualizar datos de Idioma postulante
+*/
+  async actualizarIdiomaPostulante() {
+    try {
+
+      // postea al backend y obtiene la respuesta
+      let postData &#x3D; [...this._datosCVLocal.idioma];
+      let urlUpdate &#x3D; &#x60;${this.urlPutDatosCV}/idioma/${this._datosCVLocal.idpostulante}&#x60;
+      try {
+        const newIdioma &#x3D; await this.http.put&lt;any&gt;(urlUpdate, postData).toPromise();
+        this._datosCVLocal.idioma &#x3D; newIdioma;
+        // sincroniza el nuevo valor del estado del perfil del postulante y lo emitirlo
+        this.updateEstadoDatosCVLocal(this._datosCVLocal)
+      } catch (error) {
+        console.error(&#x27;No se pudo actualizar los datos adicionales &#x27;, error)
+        throw error;
+      }
+    } catch (error) {
+      // manejo de errores
+      console.log(&#x27;datosAdicionalesService, method update. Error: &#x27;, error);
+      throw (error)
+    }
+  }
+
+  /**
+  * Actualizar datos de Informatica postulante
+  */
+  async actualizarInformaticaPostulante() {
+    try {
+
+      // postea al backend y obtiene la respuesta
+      let postData &#x3D; [...this._datosCVLocal.conocimientosInformatica];
+      let urlUpdate &#x3D; &#x60;${this.urlPutDatosCV}/informatica/${this._datosCVLocal.idpostulante}&#x60;
+      try {
+        const newInformatica &#x3D; await this.http.put&lt;any&gt;(urlUpdate, postData).toPromise();
+        this._datosCVLocal.conocimientosInformatica &#x3D; newInformatica;
+        // sincroniza el nuevo valor del estado del perfil del postulante y lo emitirlo
+        this.updateEstadoDatosCVLocal(this._datosCVLocal)
+      } catch (error) {
+        console.error(&#x27;No se pudo actualizar los datos adicionales &#x27;, error)
+        throw error;
+      }
+    } catch (error) {
+      // manejo de errores
+      console.log(&#x27;datosAdicionalesService, method update. Error: &#x27;, error);
+      throw (error)
+    }
+  }
+
+  /**
+   * Se encargara de mapear el arreglo local de EducacionPostulante a la clase 
+   * EducacionPostulanteRequestDTO del backend.
+   * @param arreglo EducacionPostulante[]
+   * @returns EducacionPostulanteRequestDTO[]
+   */
+  private convertirAEducacionPostulanteRequestDTO(arreglo: EducacionPostulante[]): EducacionPostulanteRequestDTO[] {
+    const arregloDTO: EducacionPostulanteRequestDTO[] &#x3D; [];
+    for (const educacion of arreglo) {
+      const educacionDTO: EducacionPostulanteRequestDTO &#x3D; {
+        idpostulante: this._datosCVLocal.idpostulante,
+        idniveleducativo: educacion.idniveleducativo.idniveleducativo,
+        especialidad: educacion.especialidad,
+        establecimiento: educacion.establecimiento,
+        estado: educacion.estado
+      };
+      arregloDTO.push(educacionDTO);
+    }
+    return arregloDTO;
+  }
+
+  // ************************************* ACUTALIZACION DE ESTADOS ***********************************************/
+
+  /**
+   * Actualiza el estado interno de los datos adicionales del postulante
+   * con un nuevo valor. El cual se emite a todos los suscriptores
+   * @param newDatosCV nuevos valores de los datos adicionales
+   */
+  updateEstadoDatosCVLocal(newDatosCV: DatosAdicionales): void {
+    this._datosCVLocal &#x3D; newDatosCV;
+    this.datosCVLocal.next(this._datosCVLocal);
+    if (this._datosCVLocal.conocimientosInformatica.length &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
+      this._datosCVLocal.educacionPostulante.length &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
+      this._datosCVLocal.experienciaLaboral.length &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
+      this._datosCVLocal.idioma.length &#x3D;&#x3D;&#x3D; 0 &amp;&amp;
+      this._datosCVLocal.curso.length &#x3D;&#x3D;&#x3D; 0) {
+      this.updateEstadoNoTieneDatosCV(true);
+    } else {
+      this.updateEstadoNoTieneDatosCV(false);
+    }
+  }
+
+  /**
+   * Actualiza el estado interno de tienePerfil y lo emite a los suscriptores
+   * @param newState nuevo valor boolean
+   */
+  updateEstadoNoTieneDatosCV(newState: boolean): void {
+    this._noTieneDatosCV &#x3D; newState;
+    this.noTieneDatosCV.next(this._noTieneDatosCV)
+  }
+
+  /**
+   * Blanquea los Datos de Adiconales 
+   */
+  blanqueoDeDatosCV() {
+    if (this.postulanteForm.idpostulante !&#x3D; undefined) {
+      this._datosCVLocal &#x3D; {
+        idpostulante: this.postulanteForm.idpostulante,
+        educacionPostulante: this.educacionPostulante,
+        experienciaLaboral: this.experienciaLaboral,
+        conocimientosInformatica: this.conocimientosInformatica,
+        curso: this.curso,
+        idioma: this.idioma,
+      }
+    } else {
+      console.log(&quot;Error. No se encuentra el ID del Postulante&quot;)
+    }
+
+  }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'DatosAdicionalesService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

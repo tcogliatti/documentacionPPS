@@ -1,0 +1,1149 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sbl-municipio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">sbl-municipio documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content coverage">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Documentation coverage</li>
+</ol>
+
+<div>
+    <img src="./images/coverage-badge-documentation.svg">
+</div>
+
+<table class="table table-bordered coverage" id="coverage-table">
+    <thead class="coverage-header">
+        <tr>
+            <th>File</th>
+            <th>Type</th>
+            <th>Identifier</th>
+            <th style="text-align:right" class="statements" data-sort-default>Statements</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#config">playwright.config.ts</a>
+            </td>
+            <td>variable</td>
+            <td>config</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/AppComponent.html">src/app/app.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>AppComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./guards/AuthGuardPostulante.html">src/app/barrerasRouting/auth-guard-postulante.service.ts</a>
+            </td>
+            <td>guard</td>
+            <td>AuthGuardPostulante</td>
+            <td align="right" data-sort="16">
+                <span class="coverage-percent">16 %</span>
+                <span class="coverage-count">(1/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./guards/AuthGuardDatosAdicionales.html">src/app/barrerasRouting/auth-guars-datos-adicionales.service.ts</a>
+            </td>
+            <td>guard</td>
+            <td>AuthGuardDatosAdicionales</td>
+            <td align="right" data-sort="16">
+                <span class="coverage-percent">16 %</span>
+                <span class="coverage-count">(1/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/EditarFormComponent.html">src/app/editar-form/editar-form.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>EditarFormComponent</td>
+            <td align="right" data-sort="81">
+                <span class="coverage-percent">81 %</span>
+                <span class="coverage-count">(13/16)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/BotonEditarComponent.html">src/app/formularios/botones/boton-editar/boton-editar.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>BotonEditarComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DatosDeCursoComponent.html">src/app/formularios/datosCV/datos-de-curso/datos-de-curso.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DatosDeCursoComponent</td>
+            <td align="right" data-sort="22">
+                <span class="coverage-percent">22 %</span>
+                <span class="coverage-count">(4/18)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DatosDeIdiomaComponent.html">src/app/formularios/datosCV/datos-de-idioma/datos-de-idioma.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DatosDeIdiomaComponent</td>
+            <td align="right" data-sort="42">
+                <span class="coverage-percent">42 %</span>
+                <span class="coverage-count">(6/14)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DatosDeNivelEducativoComponent.html">src/app/formularios/datosCV/datos-de-nivel-educativo/datos-de-nivel-educativo.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DatosDeNivelEducativoComponent</td>
+            <td align="right" data-sort="70">
+                <span class="coverage-percent">70 %</span>
+                <span class="coverage-count">(7/10)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DatosExperienciaLaboralComponent.html">src/app/formularios/datosCV/datos-experiencia-laboral/datos-experiencia-laboral.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DatosExperienciaLaboralComponent</td>
+            <td align="right" data-sort="45">
+                <span class="coverage-percent">45 %</span>
+                <span class="coverage-count">(5/11)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DatosInformaticaComponent.html">src/app/formularios/datosCV/datos-informatica/datos-informatica.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DatosInformaticaComponent</td>
+            <td align="right" data-sort="45">
+                <span class="coverage-percent">45 %</span>
+                <span class="coverage-count">(5/11)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ScreenFinCargaCvComponent.html">src/app/formularios/datosCV/screen-fin-carga-cv/screen-fin-carga-cv.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>ScreenFinCargaCvComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/AreasDeIncumbenciaComponent.html">src/app/formularios/datosRequeridos/areas-de-incumbencia/areas-de-incumbencia.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>AreasDeIncumbenciaComponent</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(12/15)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DatosDeContactoComponent.html">src/app/formularios/datosRequeridos/datos-de-contacto/datos-de-contacto.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DatosDeContactoComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/18)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DatosPersonalesComponent.html">src/app/formularios/datosRequeridos/datos-personales/datos-personales.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DatosPersonalesComponent</td>
+            <td align="right" data-sort="14">
+                <span class="coverage-percent">14 %</span>
+                <span class="coverage-count">(2/14)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ScreenFinDeCargaComponent.html">src/app/formularios/datosRequeridos/screen-fin-de-carga-requeridos/screen-fin-de-carga.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>ScreenFinDeCargaComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FormAreasDeIncumbenciaComponent.html">src/app/formularios/form-areas-de-incumbencia/form-areas-de-incumbencia.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FormAreasDeIncumbenciaComponent</td>
+            <td align="right" data-sort="73">
+                <span class="coverage-percent">73 %</span>
+                <span class="coverage-count">(11/15)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FormDatosCvCursoComponent.html">src/app/formularios/form-datos-cv-curso/form-datos-cv-curso.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FormDatosCvCursoComponent</td>
+            <td align="right" data-sort="26">
+                <span class="coverage-percent">26 %</span>
+                <span class="coverage-count">(7/26)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FormDatosCvIdiomaComponent.html">src/app/formularios/form-datos-cv-idioma/form-datos-cv-idioma.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FormDatosCvIdiomaComponent</td>
+            <td align="right" data-sort="69">
+                <span class="coverage-percent">69 %</span>
+                <span class="coverage-count">(18/26)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FormDatosCvNivelEducativoComponent.html">src/app/formularios/form-datos-cv-nivel-educativo/form-datos-cv-nivel-educativo.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FormDatosCvNivelEducativoComponent</td>
+            <td align="right" data-sort="82">
+                <span class="coverage-percent">82 %</span>
+                <span class="coverage-count">(19/23)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FormDatosDeContactoComponent.html">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FormDatosDeContactoComponent</td>
+            <td align="right" data-sort="5">
+                <span class="coverage-percent">5 %</span>
+                <span class="coverage-count">(1/19)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FormDatosPersonalesComponent.html">src/app/formularios/form-datos-personales/form-datos-personales.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FormDatosPersonalesComponent</td>
+            <td align="right" data-sort="12">
+                <span class="coverage-percent">12 %</span>
+                <span class="coverage-count">(4/32)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FormExperienciaLaboralComponent.html">src/app/formularios/form-experiencia-laboral/form-experiencia-laboral.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FormExperienciaLaboralComponent</td>
+            <td align="right" data-sort="56">
+                <span class="coverage-percent">56 %</span>
+                <span class="coverage-count">(13/23)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FormInformaticaComponent.html">src/app/formularios/form-informatica/form-informatica.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FormInformaticaComponent</td>
+            <td align="right" data-sort="56">
+                <span class="coverage-percent">56 %</span>
+                <span class="coverage-count">(14/25)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/SelectAutocompleteComponent.html">src/app/formularios/select-autocomplete/select-autocomplete.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>SelectAutocompleteComponent</td>
+            <td align="right" data-sort="46">
+                <span class="coverage-percent">46 %</span>
+                <span class="coverage-count">(7/15)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/SubirArchivoCvComponent.html">src/app/formularios/subir-archivo-cv/subir-archivo-cv.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>SubirArchivoCvComponent</td>
+            <td align="right" data-sort="21">
+                <span class="coverage-percent">21 %</span>
+                <span class="coverage-count">(4/19)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Area.html">src/app/interfaces/Area.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Area</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/AreaPostulante.html">src/app/interfaces/AreaPostulante.ts</a>
+            </td>
+            <td>interface</td>
+            <td>AreaPostulante</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Calle.html">src/app/interfaces/Calle.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Calle</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ConocimientoInformatica.html">src/app/interfaces/ConocimientoInformatica.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ConocimientoInformatica</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Curso.html">src/app/interfaces/Curso.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Curso</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/DatosAdicionales.html">src/app/interfaces/DatosAdicionales.ts</a>
+            </td>
+            <td>interface</td>
+            <td>DatosAdicionales</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/EducacionPostulante.html">src/app/interfaces/EducacionPostulante.ts</a>
+            </td>
+            <td>interface</td>
+            <td>EducacionPostulante</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/EducacionPostulanteRequestDTO.html">src/app/interfaces/EducacionPostulanteRequestDTO.ts</a>
+            </td>
+            <td>interface</td>
+            <td>EducacionPostulanteRequestDTO</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ExperienciaLaboral.html">src/app/interfaces/ExperienciaLaboral.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ExperienciaLaboral</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/FileData.html">src/app/interfaces/FileData.ts</a>
+            </td>
+            <td>interface</td>
+            <td>FileData</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Genero.html">src/app/interfaces/Genero.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Genero</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Idioma.html">src/app/interfaces/Idioma.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Idioma</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IdiomaPostulante.html">src/app/interfaces/IdiomaPostulante.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IdiomaPostulante</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Localidad.html">src/app/interfaces/Localidad.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Localidad</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/NivelEducativo.html">src/app/interfaces/NivelEducativo.ts</a>
+            </td>
+            <td>interface</td>
+            <td>NivelEducativo</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Pais.html">src/app/interfaces/Pais.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Pais</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Partido.html">src/app/interfaces/Partido.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Partido</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/PostulanteFakeHeader.html">src/app/interfaces/PostulanteFakeHeder.ts</a>
+            </td>
+            <td>interface</td>
+            <td>PostulanteFakeHeader</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/29)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/PostulantePerfil.html">src/app/interfaces/PostulantePerfil.ts</a>
+            </td>
+            <td>interface</td>
+            <td>PostulantePerfil</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/30)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/PrincipalConDatosRequeridos.html">src/app/interfaces/Principal.ts</a>
+            </td>
+            <td>interface</td>
+            <td>PrincipalConDatosRequeridos</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/PrincipalSinDatosRequeridos.html">src/app/interfaces/Principal.ts</a>
+            </td>
+            <td>interface</td>
+            <td>PrincipalSinDatosRequeridos</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Provincia.html">src/app/interfaces/Provincia.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Provincia</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/StepProgressBar.html">src/app/interfaces/StepProgressBar.ts</a>
+            </td>
+            <td>interface</td>
+            <td>StepProgressBar</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Titulos.html">src/app/interfaces/Titulos.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Titulos</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/9)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/EstadoCivil.html">src/app/interfaces/estadoCivil.ts</a>
+            </td>
+            <td>interface</td>
+            <td>EstadoCivil</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/TipoDocumento.html">src/app/interfaces/tipoDocumento.ts</a>
+            </td>
+            <td>interface</td>
+            <td>TipoDocumento</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/DescargarCvAutogeneradoComponent.html">src/app/layout/descargar-cv-autogenerado/descargar-cv-autogenerado.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>DescargarCvAutogeneradoComponent</td>
+            <td align="right" data-sort="4">
+                <span class="coverage-percent">4 %</span>
+                <span class="coverage-count">(1/23)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/FooterComponent.html">src/app/layout/footer/footer.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>FooterComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/HeaderComponent.html">src/app/layout/header/header.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>HeaderComponent</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(6/18)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/LayoutFlowFormCvComponent.html">src/app/layout/layout-flow-form-cv/layout-flow-form-cv.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>LayoutFlowFormCvComponent</td>
+            <td align="right" data-sort="57">
+                <span class="coverage-percent">57 %</span>
+                <span class="coverage-count">(4/7)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/LayoutFlowFormComponent.html">src/app/layout/layout-flow-form/layout-flow-form.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>LayoutFlowFormComponent</td>
+            <td align="right" data-sort="57">
+                <span class="coverage-percent">57 %</span>
+                <span class="coverage-count">(4/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/LoaderComponent.html">src/app/layout/loader/loader.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>LoaderComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/MensajeErrorFetchComponent.html">src/app/layout/mensaje-error-fetch/mensaje-error-fetch.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>MensajeErrorFetchComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/PrincipalComponent.html">src/app/layout/principal/principal.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>PrincipalComponent</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ProgressBarFormComponent.html">src/app/layout/progress-bar-form/progress-bar-form.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>ProgressBarFormComponent</td>
+            <td align="right" data-sort="60">
+                <span class="coverage-percent">60 %</span>
+                <span class="coverage-count">(6/10)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./components/ResumenComponent.html">src/app/layout/resumen/resumen.component.ts</a>
+            </td>
+            <td>component</td>
+            <td>ResumenComponent</td>
+            <td align="right" data-sort="5">
+                <span class="coverage-percent">5 %</span>
+                <span class="coverage-count">(1/17)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/AreasService.html">src/app/servicios/areas.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>AreasService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/8)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/DatosAdicionalesService.html">src/app/servicios/datos-adicionales.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>DatosAdicionalesService</td>
+            <td align="right" data-sort="60">
+                <span class="coverage-percent">60 %</span>
+                <span class="coverage-count">(18/30)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/OptionFormService.html">src/app/servicios/option-form.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>OptionFormService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/17)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/PostulanteService.html">src/app/servicios/postulante.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>PostulanteService</td>
+            <td align="right" data-sort="55">
+                <span class="coverage-percent">55 %</span>
+                <span class="coverage-count">(16/29)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ValidarFormHelperService.html">src/app/servicios/validar-form-helper.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>ValidarFormHelperService</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#API_BASE">src/constants.ts</a>
+            </td>
+            <td>variable</td>
+            <td>API_BASE</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#API_PATH">src/constants.ts</a>
+            </td>
+            <td>variable</td>
+            <td>API_PATH</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#MAXIMOS">src/constants.ts</a>
+            </td>
+            <td>variable</td>
+            <td>MAXIMOS</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#MINIMOS">src/constants.ts</a>
+            </td>
+            <td>variable</td>
+            <td>MINIMOS</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#ROUTES">src/constants.ts</a>
+            </td>
+            <td>variable</td>
+            <td>ROUTES</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#environment">src/environments/environment.prod.ts</a>
+            </td>
+            <td>variable</td>
+            <td>environment</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#environment">src/environments/environment.ts</a>
+            </td>
+            <td>variable</td>
+            <td>environment</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#context">src/test.ts</a>
+            </td>
+            <td>variable</td>
+            <td>context</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#require">src/test.ts</a>
+            </td>
+            <td>variable</td>
+            <td>require</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#ADITIONAL_DATA">tests/data_test.ts</a>
+            </td>
+            <td>variable</td>
+            <td>ADITIONAL_DATA</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#NEW_POSTULANTE">tests/data_test.ts</a>
+            </td>
+            <td>variable</td>
+            <td>NEW_POSTULANTE</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#URL_BASE_DEV">tests/data_test.ts</a>
+            </td>
+            <td>variable</td>
+            <td>URL_BASE_DEV</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="js/libs/tablesort.min.js"></script>
+<script src="js/libs/tablesort.number.min.js"></script>
+<script>
+    new Tablesort(document.getElementById('coverage-table'));
+</script>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'coverage';
+            var COMPODOC_CURRENT_PAGE_URL = 'coverage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

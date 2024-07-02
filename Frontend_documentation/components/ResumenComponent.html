@@ -1,0 +1,1508 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sbl-municipio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sbl-municipio documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ResumenComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/layout/resumen/resumen.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-resumen</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./resumen.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./resumen.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#datosCVForm" >datosCVForm</a>
+                            </li>
+                            <li>
+                                <a href="#datosCVObservable$" >datosCVObservable$</a>
+                            </li>
+                            <li>
+                                <a href="#datosCVSuscription" >datosCVSuscription</a>
+                            </li>
+                            <li>
+                                <a href="#existPostulante$" >existPostulante$</a>
+                            </li>
+                            <li>
+                                <a href="#noExistDatosCV$" >noExistDatosCV$</a>
+                            </li>
+                            <li>
+                                <a href="#nombreCvSubido" >nombreCvSubido</a>
+                            </li>
+                            <li>
+                                <a href="#perfilPostulanteSuscription" >perfilPostulanteSuscription</a>
+                            </li>
+                            <li>
+                                <a href="#postulanteForm" >postulanteForm</a>
+                            </li>
+                            <li>
+                                <a href="#postulanteObservable$" >postulanteObservable$</a>
+                            </li>
+                            <li>
+                                <a href="#previewImage" >previewImage</a>
+                            </li>
+                            <li>
+                                <a href="#routes" >routes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#downloadCvFile" >downloadCvFile</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(postulanteService: <a href="../injectables/PostulanteService.html" target="_self">PostulanteService</a>, datosCVService: <a href="../injectables/DatosAdicionalesService.html" target="_self">DatosAdicionalesService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>postulanteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PostulanteService.html" target="_self" >PostulanteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>datosCVService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DatosAdicionalesService.html" target="_self" >DatosAdicionalesService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="downloadCvFile"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>downloadCvFile</b></span>
+                        <a href="#downloadCvFile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>downloadCvFile()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">src/app/layout/resumen/resumen.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Descarga del backend del archivo de CV subido</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/app/layout/resumen/resumen.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="79"
+                                    class="link-to-prism">src/app/layout/resumen/resumen.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/layout/resumen/resumen.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="datosCVForm"></a>
+                    <span class="name">
+                        <span ><b>datosCVForm</b></span>
+                        <a href="#datosCVForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DatosAdicionales.html" target="_self" >DatosAdicionales</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="datosCVObservable$"></a>
+                    <span class="name">
+                        <span ><b>datosCVObservable$</b></span>
+                        <a href="#datosCVObservable$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DatosAdicionales.html" target="_self" >Observable&lt;DatosAdicionales&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="datosCVSuscription"></a>
+                    <span class="name">
+                        <span ><b>datosCVSuscription</b></span>
+                        <a href="#datosCVSuscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="existPostulante$"></a>
+                    <span class="name">
+                        <span ><b>existPostulante$</b></span>
+                        <a href="#existPostulante$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noExistDatosCV$"></a>
+                    <span class="name">
+                        <span ><b>noExistDatosCV$</b></span>
+                        <a href="#noExistDatosCV$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nombreCvSubido"></a>
+                    <span class="name">
+                        <span ><b>nombreCvSubido</b></span>
+                        <a href="#nombreCvSubido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="perfilPostulanteSuscription"></a>
+                    <span class="name">
+                        <span ><b>perfilPostulanteSuscription</b></span>
+                        <a href="#perfilPostulanteSuscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postulanteForm"></a>
+                    <span class="name">
+                        <span ><b>postulanteForm</b></span>
+                        <a href="#postulanteForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >PostulantePerfil</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postulanteObservable$"></a>
+                    <span class="name">
+                        <span ><b>postulanteObservable$</b></span>
+                        <a href="#postulanteObservable$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >Observable&lt;PostulantePerfil&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previewImage"></a>
+                    <span class="name">
+                        <span ><b>previewImage</b></span>
+                        <a href="#previewImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routes"></a>
+                    <span class="name">
+                        <span ><b>routes</b></span>
+                        <a href="#routes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>ROUTES</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/layout/resumen/resumen.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { PostulanteService } from &quot;../../servicios/postulante.service&quot;;
+import { Observable, Subscription } from &quot;rxjs&quot;;
+import { PostulantePerfil } from &quot;../../interfaces/PostulantePerfil&quot;;
+import { API_BASE, ROUTES } from &#x27;src/constants&#x27;;
+import { animate, style, transition, trigger } from &#x27;@angular/animations&#x27;;
+import { DatosAdicionalesService } from &#x27;src/app/servicios/datos-adicionales.service&#x27;;
+import { DatosAdicionales } from &#x27;src/app/interfaces/DatosAdicionales&#x27;;
+import { ConocimientoInformatica } from &#x27;src/app/interfaces/ConocimientoInformatica&#x27;;
+
+@Component({
+  selector: &#x27;app-resumen&#x27;,
+  templateUrl: &#x27;./resumen.component.html&#x27;,
+  styleUrls: [&#x27;./resumen.component.css&#x27;],
+  animations: [
+    trigger(&#x27;fadeInLeft&#x27;, [
+      transition(&#x27;:enter&#x27;, [
+        style({ opacity: 0, transform: &#x27;translateX(-25%)&#x27; }),
+        animate(&#x27;1000ms ease-out&#x27;, style({ opacity: 1, transform: &#x27;translateX(0)&#x27; }))
+      ])
+    ])
+  ]
+})
+export class ResumenComponent implements OnInit {
+  routes: any &#x3D; ROUTES;
+  previewImage: string | null &#x3D; null;
+
+  /* POSTULANTE SERVICE */
+  postulanteObservable$: Observable&lt;PostulantePerfil&gt;;
+  perfilPostulanteSuscription: Subscription;
+  postulanteForm!: PostulantePerfil;
+  existPostulante$: Observable&lt;boolean&gt;;
+  nombreCvSubido!: string;
+
+  /* DATOS CV SERVICE */
+  datosCVObservable$: Observable&lt;DatosAdicionales&gt;;
+  datosCVSuscription: Subscription;
+  datosCVForm!: DatosAdicionales;
+
+  noExistDatosCV$: Observable&lt;boolean&gt;;
+
+  constructor(private postulanteService: PostulanteService, private datosCVService: DatosAdicionalesService) {
+    /* POSTULANTE SERVICE */
+    this.postulanteObservable$ &#x3D; this.postulanteService.postulanteLocal.asObservable();
+    this.perfilPostulanteSuscription &#x3D; this.postulanteObservable$.subscribe(postulanteFromService &#x3D;&gt; {
+      this.postulanteForm &#x3D; { ...postulanteFromService }
+
+      // verifica que la foto de perfil exista, y le aplica la ruta completa
+      if (this.postulanteForm.foto.path || this.postulanteForm.foto.path !&#x3D; &quot;&quot;)
+        this.previewImage &#x3D; API_BASE + this.postulanteForm.foto.path + &#x27;?&#x27; + new Date().getTime();
+      else
+        this.previewImage &#x3D; null
+
+      if (this.postulanteForm.rutacv !&#x3D; null &amp;&amp; this.postulanteForm.rutacv !&#x3D; &quot;&quot;)
+        this.nombreCvSubido &#x3D; decodeURIComponent(this.postulanteForm.rutacv.substring(this.postulanteForm.rutacv.lastIndexOf(&#x27;/&#x27;) + 1));
+
+    })
+    this.existPostulante$ &#x3D; this.postulanteService.tienePerfil.asObservable();
+    /* DATOS CV SERVICE */
+    this.datosCVObservable$ &#x3D; this.datosCVService.datosCVLocal.asObservable();
+    this.datosCVSuscription &#x3D; this.datosCVObservable$.subscribe(datosCVFormService &#x3D;&gt; {
+      this.datosCVForm &#x3D; { ...datosCVFormService }
+    });
+    this.noExistDatosCV$ &#x3D; this.datosCVService.noTieneDatosCV.asObservable();
+  }
+
+  async ngOnInit(): Promise&lt;void&gt; {
+    // console.log(&quot;ONINIT RESUMEN: &quot;, this.postulanteForm);
+    this.routes &#x3D; ROUTES;
+    this.datosCVService.obtenerDatosCVByIdPostulante();
+    window.scroll(0, 0);
+    console.log(this.datosCVForm)
+  }
+  ngAfterViewInit(): void {
+    // console.log(&quot;AFTERVIEWINIT RESUMEN: &quot;, this.postulanteForm)
+
+  }
+
+  ngOnDestroy(): void {
+    // console.log(&quot;ONDESTROY RESUMEN: &quot;, this.postulanteForm)
+  }
+
+  /**
+  * Descarga del backend del archivo de CV subido 
+  * @returns
+  */
+  async downloadCvFile(): Promise&lt;void&gt; {
+    try {
+      const cvFile &#x3D; await this.postulanteService.getFileCv()
+      if (cvFile &#x3D;&#x3D; null)
+        return
+      const urlBlob &#x3D; window.URL.createObjectURL(cvFile);
+      const link &#x3D; document.createElement(&#x27;a&#x27;);
+      link.href &#x3D; urlBlob;
+      link.download &#x3D; this.nombreCvSubido;
+      link.click();
+      window.URL.revokeObjectURL(urlBlob);
+    } catch (error) {
+      throw error
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!--SOLO VA A MOSTRAR INFORMACIÓN SI EXISTE UN POSTULANTE--&gt;
+&lt;div class&#x3D;&quot;container fuente-open-sans w-100&quot; *ngIf&#x3D;&quot;( existPostulante$ | async)&quot;&gt;
+
+  &lt;!--DATOS DE USUARIO: IMAGEN/NOMBRE Y APELLIDO--&gt;
+  &lt;div class&#x3D;&quot;d-flex container pt-3 pt-lg-5 p-lg-2 gap-3 justify-content-center align-items-center&quot;&gt;
+
+    &lt;!--IMAGEN DE USUARIO + BOTON EDITAR --&gt;
+    &lt;div class&#x3D;&quot;col-5 col-lg-2 gap-2 d-flex flex-column justify-content-center align-items-center&quot;&gt;
+      &lt;!--MUESTRA LA IMAGEN PRECARGADA SI EXISTE, O PONE POR DEFECTO EL ÍCONO DE USER--&gt;
+      &lt;span *ngIf&#x3D;&quot;previewImage&quot;&gt;
+        &lt;img [src]&#x3D;&quot;previewImage&quot; alt&#x3D;&quot;imagen de perfil de postulante&quot; class&#x3D;&quot;foto-user&quot;&gt;
+      &lt;/span&gt;
+      &lt;span class&#x3D;&quot;icono-default-perfil&quot; *ngIf&#x3D;&quot;!previewImage&quot;&gt;
+        &lt;i class&#x3D;&quot;bi bi-person-circle&quot;&gt;&lt;/i&gt;
+      &lt;/span&gt;
+      &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR+&#x27;/&#x27;+routes.DATOS_PERSONALES&quot;&gt;&lt;/app-boton-editar&gt;
+
+    &lt;/div&gt;
+
+    &lt;!--NOMBRE Y APELLIDO DEL POSTULANTE--&gt;
+    &lt;div class&#x3D;&quot;col-7 d-md-none&quot;&gt;
+      &lt;h1 class&#x3D;&quot;text-capitalize fs-5 text-center w-80 m-0 p-0&quot;&gt;{{postulanteForm.nombres}}
+        {{postulanteForm.apellido}}&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;!--NOMBRE Y APELLIDO DEL POSTULANTE--&gt;
+    &lt;div class&#x3D;&quot;col-7 d-none d-md-block&quot;&gt;
+      &lt;h1 class&#x3D;&quot;text-capitalize text-center w-80 m-0 p-0&quot;&gt;{{postulanteForm.nombres}}
+        {{postulanteForm.apellido}}&lt;/h1&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;!--Línea divisoria --&gt;
+  &lt;hr class&#x3D;&quot;border-1 m-0 p-0 mx-3 mx-lg-5 mt-4&quot; /&gt;
+
+  &lt;!--RESUMEN DE DATOS REQUERIDOS --&gt;
+  &lt;div class&#x3D;&quot; container px-lg-5 &quot;&gt;
+
+    &lt;!--CARD DATOS PERSONALES--&gt;
+    &lt;div class&#x3D;&quot;mt-5 fadeInLeft&quot;&gt;
+
+      &lt;h4 class&#x3D;&quot;texto-oscuro mb-3 &quot;&gt;DATOS PERSONALES&lt;/h4&gt;
+      &lt;div class&#x3D;&quot;card shadow mt-2 mb-2 px-2 px-lg-5&quot; [@fadeInLeft]&gt;
+        &lt;div class&#x3D;&quot;card-body mt-4 p-3 mx-3 pb-lg-0&quot;&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Nombre:&lt;/b&gt; {{postulanteForm.nombres}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Apellido:&lt;/b&gt; {{postulanteForm.apellido}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Nombre autopercibido:&lt;/b&gt; {{postulanteForm.nombreautopercibido ?
+            postulanteForm.nombreautopercibido: &quot; - &quot;}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Fecha de nacimiento:&lt;/b&gt; {{postulanteForm.fecnac}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;CUIL/CUIT:&lt;/b&gt; {{postulanteForm.nrofiscal}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Nacionalidad:&lt;/b&gt; {{postulanteForm.pais.descripcion}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Tipo de documento:&lt;/b&gt; {{postulanteForm.tipoDoc.descripcion}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Nro de documento: &lt;/b&gt; {{postulanteForm.nrodoc}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Estado civil:&lt;/b&gt;
+            &lt;span *ngIf&#x3D;&quot;postulanteForm.estadoCivil&quot;&gt;
+              {{postulanteForm.estadoCivil.descripcion}}
+            &lt;/span&gt;
+            &lt;span *ngIf&#x3D;&quot;!postulanteForm.estadoCivil&quot;&gt; - &lt;/span&gt;
+
+          &lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Tiene licencia de conducir:&lt;/b&gt;
+            &lt;span *ngIf&#x3D;&quot;postulanteForm.tienelicencia&quot;&gt;Si&lt;/span&gt;
+            &lt;span *ngIf&#x3D;&quot;!postulanteForm.tienelicencia&quot;&gt;No&lt;/span&gt;
+          &lt;/p&gt;
+
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Tiene hijos:&lt;/b&gt;
+            &lt;span *ngIf&#x3D;&quot;postulanteForm.tienehijos&quot;&gt;Si&lt;/span&gt;
+            &lt;span *ngIf&#x3D;&quot;!postulanteForm.tienehijos&quot;&gt;No&lt;/span&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+        &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR+&#x27;/&#x27;+routes.DATOS_PERSONALES&quot;&gt;&lt;/app-boton-editar&gt;
+
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;!--CARD DATOS DE CONTACTO--&gt;
+    &lt;div class&#x3D;&quot;mt-5 fadeInLeft&quot;&gt;
+      &lt;h4 class&#x3D;&quot;texto-oscuro mb-3&quot;&gt;DATOS DE CONTACTO&lt;/h4&gt;
+      &lt;div class&#x3D;&quot;card shadow mt-2 mb-2 px-2 px-lg-5&quot; [@fadeInLeft]&gt;
+        &lt;div class&#x3D;&quot;card-body mt-4 p-3 mx-3 pb-lg-0&quot;&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Teléfono de contacto:&lt;/b&gt; {{postulanteForm.telefono}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Teléfono de contacto adicional:&lt;/b&gt; {{postulanteForm.celular ? postulanteForm.celular :
+            &quot;-&quot;}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Email:&lt;/b&gt; {{postulanteForm.mail}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Provincia:&lt;/b&gt; {{postulanteForm.provincia.descripcion}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Partido:&lt;/b&gt; {{postulanteForm.partido.descripcion}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Localidad:&lt;/b&gt; {{postulanteForm.localidad.descripcion}}&lt;/p&gt;
+          &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Dirección:&lt;/b&gt; {{postulanteForm.calle.descripcion}} {{postulanteForm.numcalle}}&lt;/p&gt;
+
+        &lt;/div&gt;
+        &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR+&#x27;/&#x27;+routes.DATOS_CONTACTO&quot;&gt;&lt;/app-boton-editar&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!--CARD ÁREAS DE INCUMBENCIA--&gt;
+    &lt;div class&#x3D;&quot;mt-5 fadeInLeft&quot;&gt;
+
+      &lt;h4 class&#x3D;&quot;texto-oscuro  mt-2 mb-3&quot;&gt;ÁREAS DE INCUMBENCIA&lt;/h4&gt;
+      &lt;div class&#x3D;&quot;card shadow mt-2 mb-2 px-2 px-lg-5&quot; [@fadeInLeft]&gt;
+        &lt;div class&#x3D;&quot;card-body mt-4 p-3 mx-3 pb-lg-0&quot;&gt;
+          &lt;ul class&#x3D;&quot;list-areas&quot;&gt;
+            &lt;li class&#x3D;&quot;my-3&quot; *ngFor&#x3D;&quot;let area of postulanteForm.areasIncumbencia &quot;&gt;{{area.descripcion}}&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR +&#x27;/&#x27;+ routes.AREAS_INCUMBENCIA&quot;&gt;&lt;/app-boton-editar&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div *ngIf&#x3D;&quot;!( noExistDatosCV$ | async)&quot;&gt;
+      &lt;!--CARD DATOS DE NIVELES EDUCATIVOS--&gt;
+      &lt;div class&#x3D;&quot;mt-5 fadeInLeft&quot;&gt;
+        &lt;h4 class&#x3D;&quot;texto-oscuro mb-3&quot;&gt;NIVELES EDUCATIVOS&lt;/h4&gt;
+        &lt;div *ngIf&#x3D;&quot;datosCVForm.educacionPostulante.length&gt;0&quot; class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot;
+          [@fadeInLeft]&gt;
+          &lt;div class&#x3D;&quot;card-body text-capitalize py-0  mt-3 mx-3 &quot; *ngFor&#x3D;&quot;let item of datosCVForm.educacionPostulante&quot;&gt;
+            &lt;h6 class&#x3D;&quot;p-1 mb-5 text-end card-titulo text-capitalize&quot;&gt;
+              {{item.idniveleducativo.descripcion.toLowerCase()}}&lt;/h6&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Establecimiento:&lt;/b&gt; {{item.establecimiento}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Especialidad:&lt;/b&gt; {{item.especialidad}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Estado:&lt;/b&gt; {{item.estado}}&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR+&#x27;/&#x27;+routes.NIVEL_EDUCATIVO&quot;&gt;&lt;/app-boton-editar&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;datosCVForm.educacionPostulante.length&#x3D;&#x3D;0&quot; class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot;
+          [@fadeInLeft]&gt;
+          &lt;div class&#x3D;&quot;card-body d-flex flex-column align-items-center py-0 mt-3 mx-3&quot;&gt;
+            &lt;p class&#x3D;&quot;text-center w-80 mx-3 &quot;&gt;&lt;b&gt;No tenes cargado ningun nivel educativo aun...&lt;/b&gt;&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot; routes.EDITAR+&#x27;/&#x27;+routes.NIVEL_EDUCATIVO&quot;&gt;&lt;/app-boton-editar&gt;
+
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!--CARD DATOS DE CURSOS--&gt;
+      &lt;div class&#x3D;&quot;mt-5 fadeInLeft&quot;&gt;
+        &lt;h4 class&#x3D;&quot;texto-oscuro mb-3&quot;&gt;CURSOS&lt;/h4&gt;
+        &lt;div *ngIf&#x3D;&quot;datosCVForm.curso.length &gt; 0&quot; class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot; [@fadeInLeft]&gt;
+          &lt;div class&#x3D;&quot;card-body text-capitalize py-0  mt-3 mx-3 &quot; *ngFor&#x3D;&quot;let item of datosCVForm.curso&quot;&gt;
+            &lt;h6 class&#x3D;&quot;p-1 mb-5 text-end card-titulo text-capitalize&quot;&gt;
+              {{item.descripcion.toLowerCase()}}&lt;/h6&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Establecimiento:&lt;/b&gt; {{item.establecimiento}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Año:&lt;/b&gt; {{item.anio}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Duracion:&lt;/b&gt; {{item.duracion}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Estado:&lt;/b&gt; {{item.estado}}&lt;/p&gt;
+
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR+&#x27;/&#x27;+routes.CURSO&quot;&gt;&lt;/app-boton-editar&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;datosCVForm.curso.length &#x3D;&#x3D; 0&quot; class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot; [@fadeInLeft]&gt;
+          &lt;div class&#x3D;&quot; card-body d-flex flex-column align-items-center py-0 mt-3 mx-3&quot;&gt;
+            &lt;p class&#x3D;&quot;text-center w-80 mx-3 &quot;&gt;&lt;b&gt;No tenes cargado ningun curso aun...&lt;/b&gt;&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR+&#x27;/&#x27;+routes.CURSO&quot;&gt;&lt;/app-boton-editar&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!--CARD DATOS DE EXPERIENCIA LABORAL--&gt;
+      &lt;div class&#x3D;&quot;mt-5 fadeInLeft&quot;&gt;
+        &lt;h4 class&#x3D;&quot;texto-oscuro mb-3&quot;&gt;EXPERIENCIA LABORAL&lt;/h4&gt;
+        &lt;div *ngIf&#x3D;&quot;datosCVForm.experienciaLaboral.length &gt; 0&quot; class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot;
+          [@fadeInLeft]&gt;
+          &lt;div class&#x3D;&quot;card-body text-capitalize py-0  mt-3 mx-3 &quot; *ngFor&#x3D;&quot;let item of datosCVForm.experienciaLaboral&quot;&gt;
+
+            &lt;h6 class&#x3D;&quot;p-1 mb-5 text-end card-titulo text-capitalize&quot;&gt;
+              {{item.puesto}}&lt;/h6&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Empresa:&lt;/b&gt; {{item.empresa}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Desde:&lt;/b&gt; {{item.fecingreso}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Hasta:&lt;/b&gt; {{item.fecegreso}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Funcion:&lt;/b&gt; {{item.funcion}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Referencia:&lt;/b&gt; {{item.refApenom}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Telefono:&lt;/b&gt; {{item.telefono}}&lt;/p&gt;
+
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR+&#x27;/&#x27;+routes.EXPERIENCIA_LABORAL&quot;&gt;&lt;/app-boton-editar&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;datosCVForm.experienciaLaboral.length &#x3D;&#x3D; 0&quot; class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot;
+          [@fadeInLeft]&gt;
+          &lt;div class&#x3D;&quot; card-body d-flex flex-column align-items-center py-0 mt-3 mx-3&quot;&gt;
+            &lt;p class&#x3D;&quot;text-center w-80 mx-3 &quot;&gt;&lt;b&gt;No tenes cargado ninguna experiencia laboral aun...&lt;/b&gt;&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot; routes.EDITAR+&#x27;/&#x27;+routes.EXPERIENCIA_LABORAL&quot;&gt;&lt;/app-boton-editar&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!--CARD DATOS DE IDIOMA--&gt;
+      &lt;div class&#x3D;&quot;mt-5 fadeInLeft&quot;&gt;
+        &lt;h4 class&#x3D;&quot;texto-oscuro mb-3&quot;&gt;IDIOMA&lt;/h4&gt;
+        &lt;div *ngIf&#x3D;&quot;datosCVForm.idioma.length &gt; 0&quot; class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot; [@fadeInLeft]&gt;
+          &lt;div class&#x3D;&quot;card-body text-capitalize py-0  mt-3 mx-3 &quot; *ngFor&#x3D;&quot;let item of datosCVForm.idioma&quot;&gt;
+
+            &lt;h6 class&#x3D;&quot;p-1 mb-5 text-end card-titulo text-capitalize&quot;&gt;
+              {{item.ididioma.descripcion.toLocaleLowerCase()}}&lt;/h6&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Año:&lt;/b&gt; {{item.anio}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Nivel:&lt;/b&gt; {{item.nivel}}&lt;/p&gt;
+            &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Estado:&lt;/b&gt; {{item.estado}}&lt;/p&gt;
+
+
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR+&#x27;/&#x27;+routes.IDIOMA&quot;&gt;&lt;/app-boton-editar&gt;
+        &lt;/div&gt;
+        &lt;div *ngIf&#x3D;&quot;datosCVForm.idioma.length &#x3D;&#x3D; 0&quot; class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot; [@fadeInLeft]&gt;
+          &lt;div class&#x3D;&quot; card-body d-flex flex-column align-items-center py-0 mt-3 mx-3&quot;&gt;
+            &lt;p class&#x3D;&quot;text-center w-80 mx-3 &quot;&gt;&lt;b&gt;No tenes cargado ningun idioma aun...&lt;/b&gt;&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot; routes.EDITAR+&#x27;/&#x27;+routes.IDIOMA&quot;&gt;&lt;/app-boton-editar&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!--CARD DATOS DE CONOCIMIENTOS INFORMATICOS--&gt;
+      &lt;div class&#x3D;&quot;mt-5 fadeInLeft&quot;&gt;
+        &lt;h4 class&#x3D;&quot;texto-oscuro mb-3&quot;&gt;CONOCIMIENTOS DE INFORMATICA&lt;/h4&gt;
+
+        &lt;div class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot; *ngIf&#x3D;&quot;datosCVForm.conocimientosInformatica.length &gt; 0&quot;
+          [@fadeInLeft]&gt;
+
+          &lt;div class&#x3D;&quot;card-body text-capitalize py-0 mt-3 mx-3&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let informatica of datosCVForm.conocimientosInformatica&quot;&gt;
+              &lt;h6 class&#x3D;&quot;p-1 mb-4 text-end card-titulo text-capitalize&quot;&gt; {{informatica.descripcion.toLocaleLowerCase()}}
+              &lt;/h6&gt;
+              &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Año:&lt;/b&gt; {{informatica.anio}}&lt;/p&gt;
+              &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Nivel:&lt;/b&gt; {{informatica.nivel}}&lt;/p&gt;
+              &lt;p&gt;&lt;b class&#x3D;&quot;pe-3&quot;&gt;Estado:&lt;/b&gt; {{informatica.estado}}&lt;/p&gt;
+
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot;routes.EDITAR+&#x27;/&#x27;+routes.INFORMATICA&quot;&gt;&lt;/app-boton-editar&gt;
+        &lt;/div&gt;
+
+        &lt;div *ngIf&#x3D;&quot;datosCVForm.conocimientosInformatica.length &#x3D;&#x3D;&#x3D; 0&quot;
+          class&#x3D;&quot;card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5&quot; [@fadeInLeft]&gt;
+          &lt;div class&#x3D;&quot;card-body d-flex flex-column align-items-center py-0 mt-3 mx-3&quot;&gt;
+            &lt;p class&#x3D;&quot;text-center w-80 mx-3 &quot;&gt;&lt;b&gt;No tenes cargado ningun conociemiento de informatica aun...&lt;/b&gt;&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;app-boton-editar [url]&#x3D;&quot; routes.EDITAR+&#x27;/&#x27;+routes.INFORMATICA&quot;&gt;&lt;/app-boton-editar&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!--CARD ARCHIVO DE CV--&gt;
+    &lt;div class&#x3D;&quot;mt-5&quot; *ngIf&#x3D;&quot;postulanteForm.rutacv&quot;&gt;
+
+      &lt;h4 class&#x3D;&quot;texto-oscuro  mt-2 mb-3&quot;&gt;ARCHIVO DE CV&lt;/h4&gt;
+      &lt;div class&#x3D;&quot;card shadow mt-2 mb-2 px-2 px-lg-5&quot; [@fadeInLeft]&gt;
+        &lt;div class&#x3D;&quot;card-body text-center text-lg-start mt-4 p-3 mx-3 pb-lg-0&quot;&gt;
+          &lt;p&gt;{{nombreCvSubido}}&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;!--Caja visible para pantallas grandes --&gt;
+        &lt;div class&#x3D;&quot;d-flex justify-content-lg-end justify-content-center gap-1&quot;&gt;
+          &lt;app-boton-editar&gt;&lt;/app-boton-editar&gt;
+          &lt;button type&#x3D;&quot;button&quot;
+            class&#x3D;&quot;d-flex justify-content-center align-items-center mb-4 gap-1 gap-lg-2 btn btn-azul btn-sm btn-font texto-claro px-2 px-lg-4&quot;
+            style&#x3D;&quot;max-width:180px; min-width: 100px;&quot; (click)&#x3D;&quot;downloadCvFile()&quot;&gt;
+            DESCARGAR
+            &lt;i class&#x3D;&quot;bi bi-download&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;!--TODO: ACA IRÍA LA INFORMACIÓN ADICIONAL DEL CV, SI EXISTEN DATOS ADICIONALES--&gt;
+
+  &lt;!--Línea divisoria --&gt;
+  &lt;hr class&#x3D;&quot;border-1 p-0 my-5 mx-3 mx-lg-5&quot; /&gt;
+
+  &lt;!--INFORMACIÓN PARA CONTINUAR LA CARGA DE DATOS O PASOS A SEGUIR--&gt;
+  &lt;div class&#x3D;&quot;container mt-2 mt-md-3 mt-lg-5 py-3  text-center&quot;&gt;
+    &lt;!--ÍCONO DE VALIDACIÓN--&gt;
+    &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
+      &lt;img src&#x3D;&quot;../../../../assets/iconos/iconoValidacion.png&quot; class&#x3D;&quot;d-block&quot; width&#x3D;&quot;50px&quot; style&#x3D;&quot;margin: 20px;&quot;&gt;
+    &lt;/div&gt;
+    &lt;!--TEXTO INFORMATIVO--&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+      &lt;!--Esto se debería mostrar si no hay datos adicionales cargados--&gt;
+      &lt;p class&#x3D;&quot;p-1&quot; *ngIf&#x3D;&quot;( noExistDatosCV$ | async)&quot;&gt;Listo! Tus datos personales fueron cargados y ya podés aplicar a
+        cualquier propuesta laboral&lt;/p&gt;
+
+      &lt;!--Esto se debería mostrar si hay un archivo de cv cargado--&gt;
+      &lt;p class&#x3D;&quot;p-1&quot; *ngIf&#x3D;&quot;postulanteForm.rutacv&quot;&gt;Los empleadores podrán visualizar el archivo de CV cargado.
+      &lt;/p&gt;
+
+      &lt;!--Esto se debería mostrar si no hay datos adicionales cargados--&gt;
+      &lt;p class&#x3D;&quot;p-1&quot; *ngIf&#x3D;&quot;( noExistDatosCV$ | async)&quot;&gt;Sin embargo, te recomendamos que completes tu CV para
+        que los
+        empleadores
+        conozcan más sobre tu experiencia y habilidades&lt;/p&gt;
+
+      &lt;!--Esto se debería mostrar si no hay un archivo de cv cargado--&gt;
+      &lt;p class&#x3D;&quot;p-1&quot; *ngIf&#x3D;&quot;!postulanteForm.rutacv&quot;&gt;También podés subir tu propio CV dando clic en el enlace
+        de
+        abajo&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;d-flex flex-column flex-md-row justify-content-md-center&quot;&gt;
+      &lt;!--Opciones para continuar --&gt;
+      &lt;!-- ToDo: queda agregar las url para cada botón --&gt;
+
+      &lt;!--Botón de completar CV --&gt;
+      &lt;!--Esto se debería mostrar si no hay datos adicionales cargados--&gt;
+      &lt;div class&#x3D;&quot;btn-opciones d-flex flex-column align-items-center&quot; *ngIf&#x3D;&quot;( noExistDatosCV$ | async)&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-circle mb-1&quot; [routerLink]&#x3D;&quot;&#x27;/&#x27;+[routes.DATOS_CV]&quot;&gt;
+          &lt;img src&#x3D;&quot;../../../../assets/iconos/iconoCompletarCV.png&quot;&gt;
+        &lt;/button&gt;
+        &lt;a class&#x3D;&quot;links-resumen d-flex flex-column&quot; [routerLink]&#x3D;&quot;&#x27;/&#x27;+[routes.DATOS_CV]&quot;&gt;Completar tu CV
+          &lt;strong&gt;(Recomendada)&lt;/strong&gt;&lt;/a&gt;
+
+      &lt;/div&gt;
+
+      &lt;!--Botón de subí tu CV --&gt;
+      &lt;!--Esto se debería mostrar si no hay un archivo de cv cargado--&gt;
+      &lt;div class&#x3D;&quot;btn-opciones d-flex flex-column align-items-center&quot; *ngIf&#x3D;&quot;!postulanteForm.rutacv&quot;&gt;
+        &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-circle mb-1&quot; [routerLink]&#x3D;&quot;&#x27;/&#x27;+[routes.SUBIR_CV]&quot;&gt;
+          &lt;img src&#x3D;&quot;../../../../assets/iconos/iconoSubirCV.png&quot;&gt;
+        &lt;/button&gt;
+        &lt;a class&#x3D;&quot;links-resumen&quot; [routerLink]&#x3D;&quot;&#x27;/&#x27;+[routes.SUBIR_CV]&quot;&gt;Subí tu CV &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+
+  &lt;/div&gt;
+
+  &lt;!--Línea divisoria --&gt;
+  &lt;hr class&#x3D;&quot;border-1 p-0 mx-3 mx-lg-5 my-5&quot; /&gt;
+
+  &lt;!--ACCESO A LA DESCARGA DEL CV AUTOGENERADO--&gt;
+  &lt;div class&#x3D;&quot;container mt-3 mt-md-3 mt-lg-5 py-4 &quot;&gt;
+    &lt;div class&#x3D;&quot; mt-2 text-center&quot;&gt;
+      &lt;div class&#x3D;&quot;texto-informativo&quot;&gt;
+        &lt;p&gt;Tambien te ofrecemos un &lt;strong&gt; CV Autogenerado &lt;/strong&gt; con la información proporcionada.&lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;d-flex flex-column flex-md-row align-items-center justify-content-md-center&quot;&gt;
+
+        &lt;!-- ToDo: queda agregar la url --&gt;
+
+        &lt;!--Botón de descargar CV autogenerado--&gt;
+        &lt;div class&#x3D;&quot;btn-opciones gap-2 d-flex flex-column align-items-center&quot;&gt;
+          &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-circle mb-1&quot; [routerLink]&#x3D;&quot;&#x27;/&#x27;+[routes.DESCARGAR_CV]&quot;&gt;
+            &lt;img src&#x3D;&quot;../../../../assets/iconos/iconoDescargar.png&quot;&gt;
+          &lt;/button&gt;
+          &lt;a class&#x3D;&quot;links-resumen&quot; [routerLink]&#x3D;&quot;&#x27;/&#x27;+[routes.DESCARGAR_CV]&quot;&gt;Descargar mi CV Autogenerado&lt;/a&gt;
+
+          &lt;!-- &lt;a [routerLink]&#x3D;&quot;&#x27;/&#x27;+[routes.VISTA_PREVIA_CV]&quot; class&#x3D;&quot;my-5 link-CV-autogenerado&quot;&gt;Vista previa CV &lt;i
+              class&#x3D;&quot;bi bi-link-45deg&quot;&gt;&lt;/i&gt;&lt;/a&gt; --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./resumen.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.margen-izquierdo3 {
+  margin-left: 3rem;
+}
+
+.btn-circle {
+  background: #283780;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0;
+}
+
+.btn-circle img {
+  width: 50px;
+  padding: 10px;
+
+}
+
+.btn-circle img.img-propuestas {
+  width: 45px;
+}
+
+.btn-propuestas {
+  background: #4F7576;
+}
+
+.btn-opciones {
+  padding: 20px;
+  margin: 0 50px;
+}
+
+.btn-opciones a {
+  text-decoration: none;
+}
+
+.negrita {
+  font-weight: bold;
+}
+
+.foto-user {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.list-areas {
+  list-style-type: disclosure-closed;
+}
+
+.links-resumen {
+  color: #3A529D;
+  transition: all 0.2s ease;
+}
+
+.links-resumen:hover {
+  color: #37B9E2 !important;
+  text-decoration: underline !important;
+}
+
+.btn-font {
+  font-size: 2vw;
+}
+
+.icono-editar {
+  min-width: 8px;
+  width: 1.5vh;
+}
+
+.btn-descargar {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  width: 30px;
+  height: 30px;
+}
+
+.icono-default-perfil {
+  font-size: 80px;
+}
+
+.card-titulo {
+  border-bottom: 1px solid #1d1d1d;
+}
+
+@media only screen and (max-width: 500px) {
+  .btn-font {
+    font-size: 8px;
+  }
+
+  .container p,
+  .container li,
+  .container a {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .icono-default-perfil {
+    font-size: 100px;
+  }
+
+  .foto-user {
+    width: 150px;
+    height: 150px;
+  }
+
+  .padding-ld {
+    padding: 5rem;
+  }
+
+  .btn-font {
+    font-size: 12px;
+  }
+
+  .icono-editar {
+    width: 12px;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!--SOLO VA A MOSTRAR INFORMACIÓN SI EXISTE UN POSTULANTE--><div class="container fuente-open-sans w-100" *ngIf="( existPostulante$ | async)">  <!--DATOS DE USUARIO: IMAGEN/NOMBRE Y APELLIDO-->  <div class="d-flex container pt-3 pt-lg-5 p-lg-2 gap-3 justify-content-center align-items-center">    <!--IMAGEN DE USUARIO + BOTON EDITAR -->    <div class="col-5 col-lg-2 gap-2 d-flex flex-column justify-content-center align-items-center">      <!--MUESTRA LA IMAGEN PRECARGADA SI EXISTE, O PONE POR DEFECTO EL ÍCONO DE USER-->      <span *ngIf="previewImage">        <img [src]="previewImage" alt="imagen de perfil de postulante" class="foto-user">      </span>      <span class="icono-default-perfil" *ngIf="!previewImage">        <i class="bi bi-person-circle"></i>      </span>      <app-boton-editar [url]="routes.EDITAR+\'/\'+routes.DATOS_PERSONALES"></app-boton-editar>    </div>    <!--NOMBRE Y APELLIDO DEL POSTULANTE-->    <div class="col-7 d-md-none">      <h1 class="text-capitalize fs-5 text-center w-80 m-0 p-0">{{postulanteForm.nombres}}        {{postulanteForm.apellido}}</h1>    </div>    <!--NOMBRE Y APELLIDO DEL POSTULANTE-->    <div class="col-7 d-none d-md-block">      <h1 class="text-capitalize text-center w-80 m-0 p-0">{{postulanteForm.nombres}}        {{postulanteForm.apellido}}</h1>    </div>  </div>  <!--Línea divisoria -->  <hr class="border-1 m-0 p-0 mx-3 mx-lg-5 mt-4" />  <!--RESUMEN DE DATOS REQUERIDOS -->  <div class=" container px-lg-5 ">    <!--CARD DATOS PERSONALES-->    <div class="mt-5 fadeInLeft">      <h4 class="texto-oscuro mb-3 ">DATOS PERSONALES</h4>      <div class="card shadow mt-2 mb-2 px-2 px-lg-5" [@fadeInLeft]>        <div class="card-body mt-4 p-3 mx-3 pb-lg-0">          <p><b class="pe-3">Nombre:</b> {{postulanteForm.nombres}}</p>          <p><b class="pe-3">Apellido:</b> {{postulanteForm.apellido}}</p>          <p><b class="pe-3">Nombre autopercibido:</b> {{postulanteForm.nombreautopercibido ?            postulanteForm.nombreautopercibido: " - "}}</p>          <p><b class="pe-3">Fecha de nacimiento:</b> {{postulanteForm.fecnac}}</p>          <p><b class="pe-3">CUIL/CUIT:</b> {{postulanteForm.nrofiscal}}</p>          <p><b class="pe-3">Nacionalidad:</b> {{postulanteForm.pais.descripcion}}</p>          <p><b class="pe-3">Tipo de documento:</b> {{postulanteForm.tipoDoc.descripcion}}</p>          <p><b class="pe-3">Nro de documento: </b> {{postulanteForm.nrodoc}}</p>          <p><b class="pe-3">Estado civil:</b>            <span *ngIf="postulanteForm.estadoCivil">              {{postulanteForm.estadoCivil.descripcion}}            </span>            <span *ngIf="!postulanteForm.estadoCivil"> - </span>          </p>          <p><b class="pe-3">Tiene licencia de conducir:</b>            <span *ngIf="postulanteForm.tienelicencia">Si</span>            <span *ngIf="!postulanteForm.tienelicencia">No</span>          </p>          <p><b class="pe-3">Tiene hijos:</b>            <span *ngIf="postulanteForm.tienehijos">Si</span>            <span *ngIf="!postulanteForm.tienehijos">No</span>          </p>        </div>        <app-boton-editar [url]="routes.EDITAR+\'/\'+routes.DATOS_PERSONALES"></app-boton-editar>      </div>    </div>    <!--CARD DATOS DE CONTACTO-->    <div class="mt-5 fadeInLeft">      <h4 class="texto-oscuro mb-3">DATOS DE CONTACTO</h4>      <div class="card shadow mt-2 mb-2 px-2 px-lg-5" [@fadeInLeft]>        <div class="card-body mt-4 p-3 mx-3 pb-lg-0">          <p><b class="pe-3">Teléfono de contacto:</b> {{postulanteForm.telefono}}</p>          <p><b class="pe-3">Teléfono de contacto adicional:</b> {{postulanteForm.celular ? postulanteForm.celular :            "-"}}</p>          <p><b class="pe-3">Email:</b> {{postulanteForm.mail}}</p>          <p><b class="pe-3">Provincia:</b> {{postulanteForm.provincia.descripcion}}</p>          <p><b class="pe-3">Partido:</b> {{postulanteForm.partido.descripcion}}</p>          <p><b class="pe-3">Localidad:</b> {{postulanteForm.localidad.descripcion}}</p>          <p><b class="pe-3">Dirección:</b> {{postulanteForm.calle.descripcion}} {{postulanteForm.numcalle}}</p>        </div>        <app-boton-editar [url]="routes.EDITAR+\'/\'+routes.DATOS_CONTACTO"></app-boton-editar>      </div>    </div>    <!--CARD ÁREAS DE INCUMBENCIA-->    <div class="mt-5 fadeInLeft">      <h4 class="texto-oscuro  mt-2 mb-3">ÁREAS DE INCUMBENCIA</h4>      <div class="card shadow mt-2 mb-2 px-2 px-lg-5" [@fadeInLeft]>        <div class="card-body mt-4 p-3 mx-3 pb-lg-0">          <ul class="list-areas">            <li class="my-3" *ngFor="let area of postulanteForm.areasIncumbencia ">{{area.descripcion}}</li>          </ul>        </div>        <app-boton-editar [url]="routes.EDITAR +\'/\'+ routes.AREAS_INCUMBENCIA"></app-boton-editar>      </div>    </div>    <div *ngIf="!( noExistDatosCV$ | async)">      <!--CARD DATOS DE NIVELES EDUCATIVOS-->      <div class="mt-5 fadeInLeft">        <h4 class="texto-oscuro mb-3">NIVELES EDUCATIVOS</h4>        <div *ngIf="datosCVForm.educacionPostulante.length>0" class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5"          [@fadeInLeft]>          <div class="card-body text-capitalize py-0  mt-3 mx-3 " *ngFor="let item of datosCVForm.educacionPostulante">            <h6 class="p-1 mb-5 text-end card-titulo text-capitalize">              {{item.idniveleducativo.descripcion.toLowerCase()}}</h6>            <p><b class="pe-3">Establecimiento:</b> {{item.establecimiento}}</p>            <p><b class="pe-3">Especialidad:</b> {{item.especialidad}}</p>            <p><b class="pe-3">Estado:</b> {{item.estado}}</p>          </div>          <app-boton-editar [url]="routes.EDITAR+\'/\'+routes.NIVEL_EDUCATIVO"></app-boton-editar>        </div>        <div *ngIf="datosCVForm.educacionPostulante.length==0" class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5"          [@fadeInLeft]>          <div class="card-body d-flex flex-column align-items-center py-0 mt-3 mx-3">            <p class="text-center w-80 mx-3 "><b>No tenes cargado ningun nivel educativo aun...</b></p>          </div>          <app-boton-editar [url]=" routes.EDITAR+\'/\'+routes.NIVEL_EDUCATIVO"></app-boton-editar>        </div>      </div>      <!--CARD DATOS DE CURSOS-->      <div class="mt-5 fadeInLeft">        <h4 class="texto-oscuro mb-3">CURSOS</h4>        <div *ngIf="datosCVForm.curso.length > 0" class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5" [@fadeInLeft]>          <div class="card-body text-capitalize py-0  mt-3 mx-3 " *ngFor="let item of datosCVForm.curso">            <h6 class="p-1 mb-5 text-end card-titulo text-capitalize">              {{item.descripcion.toLowerCase()}}</h6>            <p><b class="pe-3">Establecimiento:</b> {{item.establecimiento}}</p>            <p><b class="pe-3">Año:</b> {{item.anio}}</p>            <p><b class="pe-3">Duracion:</b> {{item.duracion}}</p>            <p><b class="pe-3">Estado:</b> {{item.estado}}</p>          </div>          <app-boton-editar [url]="routes.EDITAR+\'/\'+routes.CURSO"></app-boton-editar>        </div>        <div *ngIf="datosCVForm.curso.length == 0" class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5" [@fadeInLeft]>          <div class=" card-body d-flex flex-column align-items-center py-0 mt-3 mx-3">            <p class="text-center w-80 mx-3 "><b>No tenes cargado ningun curso aun...</b></p>          </div>          <app-boton-editar [url]="routes.EDITAR+\'/\'+routes.CURSO"></app-boton-editar>        </div>      </div>      <!--CARD DATOS DE EXPERIENCIA LABORAL-->      <div class="mt-5 fadeInLeft">        <h4 class="texto-oscuro mb-3">EXPERIENCIA LABORAL</h4>        <div *ngIf="datosCVForm.experienciaLaboral.length > 0" class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5"          [@fadeInLeft]>          <div class="card-body text-capitalize py-0  mt-3 mx-3 " *ngFor="let item of datosCVForm.experienciaLaboral">            <h6 class="p-1 mb-5 text-end card-titulo text-capitalize">              {{item.puesto}}</h6>            <p><b class="pe-3">Empresa:</b> {{item.empresa}}</p>            <p><b class="pe-3">Desde:</b> {{item.fecingreso}}</p>            <p><b class="pe-3">Hasta:</b> {{item.fecegreso}}</p>            <p><b class="pe-3">Funcion:</b> {{item.funcion}}</p>            <p><b class="pe-3">Referencia:</b> {{item.refApenom}}</p>            <p><b class="pe-3">Telefono:</b> {{item.telefono}}</p>          </div>          <app-boton-editar [url]="routes.EDITAR+\'/\'+routes.EXPERIENCIA_LABORAL"></app-boton-editar>        </div>        <div *ngIf="datosCVForm.experienciaLaboral.length == 0" class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5"          [@fadeInLeft]>          <div class=" card-body d-flex flex-column align-items-center py-0 mt-3 mx-3">            <p class="text-center w-80 mx-3 "><b>No tenes cargado ninguna experiencia laboral aun...</b></p>          </div>          <app-boton-editar [url]=" routes.EDITAR+\'/\'+routes.EXPERIENCIA_LABORAL"></app-boton-editar>        </div>      </div>      <!--CARD DATOS DE IDIOMA-->      <div class="mt-5 fadeInLeft">        <h4 class="texto-oscuro mb-3">IDIOMA</h4>        <div *ngIf="datosCVForm.idioma.length > 0" class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5" [@fadeInLeft]>          <div class="card-body text-capitalize py-0  mt-3 mx-3 " *ngFor="let item of datosCVForm.idioma">            <h6 class="p-1 mb-5 text-end card-titulo text-capitalize">              {{item.ididioma.descripcion.toLocaleLowerCase()}}</h6>            <p><b class="pe-3">Año:</b> {{item.anio}}</p>            <p><b class="pe-3">Nivel:</b> {{item.nivel}}</p>            <p><b class="pe-3">Estado:</b> {{item.estado}}</p>          </div>          <app-boton-editar [url]="routes.EDITAR+\'/\'+routes.IDIOMA"></app-boton-editar>        </div>        <div *ngIf="datosCVForm.idioma.length == 0" class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5" [@fadeInLeft]>          <div class=" card-body d-flex flex-column align-items-center py-0 mt-3 mx-3">            <p class="text-center w-80 mx-3 "><b>No tenes cargado ningun idioma aun...</b></p>          </div>          <app-boton-editar [url]=" routes.EDITAR+\'/\'+routes.IDIOMA"></app-boton-editar>        </div>      </div>      <!--CARD DATOS DE CONOCIMIENTOS INFORMATICOS-->      <div class="mt-5 fadeInLeft">        <h4 class="texto-oscuro mb-3">CONOCIMIENTOS DE INFORMATICA</h4>        <div class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5" *ngIf="datosCVForm.conocimientosInformatica.length > 0"          [@fadeInLeft]>          <div class="card-body text-capitalize py-0 mt-3 mx-3">            <div *ngFor="let informatica of datosCVForm.conocimientosInformatica">              <h6 class="p-1 mb-4 text-end card-titulo text-capitalize"> {{informatica.descripcion.toLocaleLowerCase()}}              </h6>              <p><b class="pe-3">Año:</b> {{informatica.anio}}</p>              <p><b class="pe-3">Nivel:</b> {{informatica.nivel}}</p>              <p><b class="pe-3">Estado:</b> {{informatica.estado}}</p>            </div>          </div>          <app-boton-editar [url]="routes.EDITAR+\'/\'+routes.INFORMATICA"></app-boton-editar>        </div>        <div *ngIf="datosCVForm.conocimientosInformatica.length === 0"          class="card shadow mt-2 mb-2 px-2 py-lg-3 px-lg-5" [@fadeInLeft]>          <div class="card-body d-flex flex-column align-items-center py-0 mt-3 mx-3">            <p class="text-center w-80 mx-3 "><b>No tenes cargado ningun conociemiento de informatica aun...</b></p>          </div>          <app-boton-editar [url]=" routes.EDITAR+\'/\'+routes.INFORMATICA"></app-boton-editar>        </div>      </div>    </div>    <!--CARD ARCHIVO DE CV-->    <div class="mt-5" *ngIf="postulanteForm.rutacv">      <h4 class="texto-oscuro  mt-2 mb-3">ARCHIVO DE CV</h4>      <div class="card shadow mt-2 mb-2 px-2 px-lg-5" [@fadeInLeft]>        <div class="card-body text-center text-lg-start mt-4 p-3 mx-3 pb-lg-0">          <p>{{nombreCvSubido}}</p>        </div>        <!--Caja visible para pantallas grandes -->        <div class="d-flex justify-content-lg-end justify-content-center gap-1">          <app-boton-editar></app-boton-editar>          <button type="button"            class="d-flex justify-content-center align-items-center mb-4 gap-1 gap-lg-2 btn btn-azul btn-sm btn-font texto-claro px-2 px-lg-4"            style="max-width:180px; min-width: 100px;" (click)="downloadCvFile()">            DESCARGAR            <i class="bi bi-download"></i>          </button>        </div>      </div>    </div>  </div>  <!--TODO: ACA IRÍA LA INFORMACIÓN ADICIONAL DEL CV, SI EXISTEN DATOS ADICIONALES-->  <!--Línea divisoria -->  <hr class="border-1 p-0 my-5 mx-3 mx-lg-5" />  <!--INFORMACIÓN PARA CONTINUAR LA CARGA DE DATOS O PASOS A SEGUIR-->  <div class="container mt-2 mt-md-3 mt-lg-5 py-3  text-center">    <!--ÍCONO DE VALIDACIÓN-->    <div class="d-flex justify-content-center">      <img src="../../../../assets/iconos/iconoValidacion.png" class="d-block" width="50px" style="margin: 20px;">    </div>    <!--TEXTO INFORMATIVO-->    <div class="container">      <!--Esto se debería mostrar si no hay datos adicionales cargados-->      <p class="p-1" *ngIf="( noExistDatosCV$ | async)">Listo! Tus datos personales fueron cargados y ya podés aplicar a        cualquier propuesta laboral</p>      <!--Esto se debería mostrar si hay un archivo de cv cargado-->      <p class="p-1" *ngIf="postulanteForm.rutacv">Los empleadores podrán visualizar el archivo de CV cargado.      </p>      <!--Esto se debería mostrar si no hay datos adicionales cargados-->      <p class="p-1" *ngIf="( noExistDatosCV$ | async)">Sin embargo, te recomendamos que completes tu CV para        que los        empleadores        conozcan más sobre tu experiencia y habilidades</p>      <!--Esto se debería mostrar si no hay un archivo de cv cargado-->      <p class="p-1" *ngIf="!postulanteForm.rutacv">También podés subir tu propio CV dando clic en el enlace        de        abajo</p>    </div>    <div class="d-flex flex-column flex-md-row justify-content-md-center">      <!--Opciones para continuar -->      <!-- ToDo: queda agregar las url para cada botón -->      <!--Botón de completar CV -->      <!--Esto se debería mostrar si no hay datos adicionales cargados-->      <div class="btn-opciones d-flex flex-column align-items-center" *ngIf="( noExistDatosCV$ | async)">        <button type="button" class="btn btn-circle mb-1" [routerLink]="\'/\'+[routes.DATOS_CV]">          <img src="../../../../assets/iconos/iconoCompletarCV.png">        </button>        <a class="links-resumen d-flex flex-column" [routerLink]="\'/\'+[routes.DATOS_CV]">Completar tu CV          <strong>(Recomendada)</strong></a>      </div>      <!--Botón de subí tu CV -->      <!--Esto se debería mostrar si no hay un archivo de cv cargado-->      <div class="btn-opciones d-flex flex-column align-items-center" *ngIf="!postulanteForm.rutacv">        <button type="button" class="btn btn-circle mb-1" [routerLink]="\'/\'+[routes.SUBIR_CV]">          <img src="../../../../assets/iconos/iconoSubirCV.png">        </button>        <a class="links-resumen" [routerLink]="\'/\'+[routes.SUBIR_CV]">Subí tu CV </a>      </div>    </div>  </div>  <!--Línea divisoria -->  <hr class="border-1 p-0 mx-3 mx-lg-5 my-5" />  <!--ACCESO A LA DESCARGA DEL CV AUTOGENERADO-->  <div class="container mt-3 mt-md-3 mt-lg-5 py-4 ">    <div class=" mt-2 text-center">      <div class="texto-informativo">        <p>Tambien te ofrecemos un <strong> CV Autogenerado </strong> con la información proporcionada.</p>      </div>      <div class="d-flex flex-column flex-md-row align-items-center justify-content-md-center">        <!-- ToDo: queda agregar la url -->        <!--Botón de descargar CV autogenerado-->        <div class="btn-opciones gap-2 d-flex flex-column align-items-center">          <button type="button" class="btn btn-circle mb-1" [routerLink]="\'/\'+[routes.DESCARGAR_CV]">            <img src="../../../../assets/iconos/iconoDescargar.png">          </button>          <a class="links-resumen" [routerLink]="\'/\'+[routes.DESCARGAR_CV]">Descargar mi CV Autogenerado</a>          <!-- <a [routerLink]="\'/\'+[routes.VISTA_PREVIA_CV]" class="my-5 link-CV-autogenerado">Vista previa CV <i              class="bi bi-link-45deg"></i></a> -->        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreasDeIncumbenciaComponent', 'selector': 'app-areas-de-incumbencia'},{'name': 'BotonEditarComponent', 'selector': 'app-boton-editar'},{'name': 'DatosDeContactoComponent', 'selector': 'app-datos-de-contacto'},{'name': 'DatosDeCursoComponent', 'selector': 'app-datos-de-curso'},{'name': 'DatosDeIdiomaComponent', 'selector': 'app-datos-idioma'},{'name': 'DatosDeNivelEducativoComponent', 'selector': 'app-datos-nivel-educativo'},{'name': 'DatosExperienciaLaboralComponent', 'selector': 'app-datos-experiencia-laboral'},{'name': 'DatosInformaticaComponent', 'selector': 'app-datos-informatica'},{'name': 'DatosPersonalesComponent', 'selector': 'app-datos-personales'},{'name': 'DescargarCvAutogeneradoComponent', 'selector': 'app-descargar-cv-autogenerado'},{'name': 'EditarFormComponent', 'selector': 'app-editar-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormAreasDeIncumbenciaComponent', 'selector': 'app-form-areas-de-incumbencia'},{'name': 'FormDatosCvCursoComponent', 'selector': 'app-form-datos-cv-curso'},{'name': 'FormDatosCvIdiomaComponent', 'selector': 'app-form-datos-cv-idioma'},{'name': 'FormDatosCvNivelEducativoComponent', 'selector': 'app-form-datos-cv-nivel-educativo'},{'name': 'FormDatosDeContactoComponent', 'selector': 'app-form-datos-de-contacto'},{'name': 'FormDatosPersonalesComponent', 'selector': 'app-form-datos-personales'},{'name': 'FormExperienciaLaboralComponent', 'selector': 'app-form-experiencia-laboral'},{'name': 'FormInformaticaComponent', 'selector': 'app-form-informatica'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LayoutFlowFormComponent', 'selector': 'app-layout-flow-form'},{'name': 'LayoutFlowFormCvComponent', 'selector': 'app-layout-flow-form-cv'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MensajeErrorFetchComponent', 'selector': 'app-mensaje-error-fetch'},{'name': 'PrincipalComponent', 'selector': 'app-principal'},{'name': 'ProgressBarFormComponent', 'selector': 'app-progress-bar-form'},{'name': 'ResumenComponent', 'selector': 'app-resumen'},{'name': 'ScreenFinCargaCvComponent', 'selector': 'app-screen-fin-carga-cv'},{'name': 'ScreenFinDeCargaComponent', 'selector': 'app-screen-fin-de-carga'},{'name': 'SelectAutocompleteComponent', 'selector': 'app-select-autcomplete'},{'name': 'SubirArchivoCvComponent', 'selector': 'app-subir-archivo-cv'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ResumenComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ResumenComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

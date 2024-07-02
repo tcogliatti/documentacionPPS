@@ -1,0 +1,1087 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sbl-municipio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sbl-municipio documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ProgressBarFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/layout/progress-bar-form/progress-bar-form.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-progress-bar-form</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./progress-bar-form.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./progress-bar-form.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualStep" >actualStep</a>
+                            </li>
+                            <li>
+                                <a href="#routerSubscription" >routerSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#steps" >steps</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#updateStep" >updateStep</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#progressBarInit" >progressBarInit</a>
+                            </li>
+                            <li>
+                                <a href="#titleLayout" >titleLayout</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/layout/progress-bar-form/progress-bar-form.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Iyección de dependencia de Router para trabajar con la URL del navegador</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="progressBarInit"></a>
+                        <b>progressBarInit</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/StepProgressBar.html" target="_self" >StepProgressBar[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/layout/progress-bar-form/progress-bar-form.component.ts:65</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Array de configuración</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="titleLayout"></a>
+                        <b>titleLayout</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/layout/progress-bar-form/progress-bar-form.component.ts:72</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Titulo del flow de carga</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/layout/progress-bar-form/progress-bar-form.component.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>ngOnDestroy
+se des-suscribe de la dependencia que le permite obtener la URL</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/layout/progress-bar-form/progress-bar-form.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>OnInit</p>
+<ol>
+<li>inicializa la variable Steps: total de pasos</li>
+<li>Obtiene una actualización del path en el que se encuetra actualmente y actualiza el estado del componente.Es para el caso exepcional en que el usuario ingrese diorectamente al flow de carga introduciendo una URL en el navegador, la cual no corresponda al paso 1 del flow.</li>
+<li>Suscribe al evento de NavigationEnd para obtener la URL del navegador. Si detecta un cambio en la URL, entonces ejecuta la actualización del componente.</li>
+</ol>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateStep"></a>
+                    <span class="name">
+                        <span ><b>updateStep</b></span>
+                        <a href="#updateStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateStep(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="114"
+                                    class="link-to-prism">src/app/layout/progress-bar-form/progress-bar-form.component.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>updateStep</p>
+<ol>
+<li>obtiene el ultimo segment de la URL</li>
+<li>Busca en el array a que paso corresponde ese segmento. Toma el index de ese paso, actualiza la variable actualStep, utilizada para el renderizado condicional.</li>
+</ol>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>url</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>la URL completa obtenida del navegador</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualStep"></a>
+                    <span class="name">
+                        <span ><b>actualStep</b></span>
+                        <a href="#actualStep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>NaN</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/layout/progress-bar-form/progress-bar-form.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="routerSubscription"></a>
+                    <span class="name">
+                        <span ><b>routerSubscription</b></span>
+                        <a href="#routerSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription | undefined</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/layout/progress-bar-form/progress-bar-form.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="steps"></a>
+                    <span class="name">
+                        <span ><b>steps</b></span>
+                        <a href="#steps"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>NaN</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/layout/progress-bar-form/progress-bar-form.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
+import { StepProgressBar } from &#x27;../../interfaces/StepProgressBar&#x27;;
+import { NavigationEnd, Router } from &#x27;@angular/router&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+
+@Component({
+  selector: &#x27;app-progress-bar-form&#x27;,
+  templateUrl: &#x27;./progress-bar-form.component.html&#x27;,
+  styleUrls: [&#x27;./progress-bar-form.component.css&#x27;]
+})
+
+/**
+ * Barra de progreso de carga de datos
+ * 
+ * Descripción:
+ * Muestra a los usuarios un diseño que le informa el progreso de la carga de datos. 
+ * Es utilizado en flujos en que se requiere completar información en varios pasos, por ejemplo, donde cada paso es un formulario.
+ * Para informar al usuario el estado de la carga, el diseño UX/UI del componente debe mostrar:
+ *  1. Una serie de items que representen cada paso del flujo
+ *  2. Cuál es el paso actual en el que se encuentra
+ *  3. Cuáles son los pasos por completarse
+ *  4. Cuáles son los pasos que ya se completaron 
+ * 
+ * Configuración:
+ * Este componente debe montarse en un layout. El layout contendrá esta barra de progreso así como también las diferentes páginas que consisten en cada paso de la carga de datos.
+ * Es importante que esas diferentes páginas contenidas en el layout estén previamente definidas en el app-routing.module.ts con sus respectivos PATH.
+ * El layout proveerá al componeten ProgressBarForm la configuración con la que debe inicializarse. Esto brinda flexibilidad al componente pudiendo ser reutilizado en diferentes contextos que le enviarán diferentes configuraciones.
+ * 
+ * El componente ProgressBarForm recibirá la configuracíon desde el layout que lo contiene.
+ *  @input progressBarInit&lt;StepProgressBar&gt;[]
+ * Este array define: 
+ *  - length: cantidad de pasos.
+ *  - index de cada elemento: define su orden
+ *  - Cada elemento: contiene un objeto de tipo StepProgressBar que define el de cada paso, su PATH y su nombre:
+ *    a. Titulo del paso
+ *    b. Path del formulario. Es importante que este valor sea exatamente igual al PATH definido en app-routing.module.ts, correspondiente a cada children del layout.
+ * 
+ * La barra de progreso también recibe del layout el nombre generál del flujo de carga de datos:
+ * @input nombreDeFlujo: string
+ * 
+ * Funcionamiento:
+ *  1. El componente lee la URL en la que se encuentra
+ *  2. Obtiene el último tramo del path
+ *     Ejemplo 
+ *      URL completa: http://localhost:4200/datos-requeridos/datos-personales
+ *      ultimo tramo de la URL: &quot;datos-personales&quot;
+ *  3. Busca en el array de configuración el path que coincide con el de la URL
+ *  4. obtiene el index y lo asigna a una variable llamada actualStep: number
+ *      actualStep &#x3D; index + 1
+ *  5. Obtiene el nombre del paso actual
+ *  6. Con estos datos el componente reconoce el estado en que se ecuentra cada ítem del flujo de carga
+ *     a. paso actual: actualStep
+ *     b. Pasos completados: todos los index &lt; actualStep - 1
+ *     c. Pasos por completarse: todos los index &gt; actualStep - 1
+ *  7. Renderido condicional aplicando clases diferenciales a cada ítem del flujo de carga de acuerdo al estado que le corresponde
+ *
+ */
+export class ProgressBarFormComponent implements OnInit {
+
+  /**
+   * Array de configuración
+   * @type {StepProgressBar[]}
+   */
+  @Input()
+  progressBarInit: StepProgressBar[] &#x3D; [];
+
+  /**
+   * Titulo del flow de carga
+   * @type {string}
+   */
+  @Input()
+  titleLayout: string &#x3D; &quot;&quot;
+
+  routerSubscription: Subscription | undefined;
+  actualStep: number &#x3D; NaN;
+  steps: number &#x3D; NaN;
+
+  /**
+   * Constructor
+   * @param router Iyección de dependencia de Router para trabajar con la URL del navegador
+   */
+  constructor( private router: Router ) {
+  }
+
+  /**
+   * OnInit
+   * 1. inicializa la variable Steps: total de pasos
+   * 2. Obtiene una actualización del path en el que se encuetra actualmente y actualiza el estado del componente.Es para el caso exepcional en que el usuario ingrese diorectamente al flow de carga introduciendo una URL en el navegador, la cual no corresponda al paso 1 del flow.
+   * 3. Suscribe al evento de NavigationEnd para obtener la URL del navegador. Si detecta un cambio en la URL, entonces ejecuta la actualización del componente.
+   */
+  ngOnInit(): void {
+    // 1. obtener la cantidad de pasos
+    this.steps &#x3D; this.progressBarInit.length;
+
+    // 2. verifica en que tramo del flow se encuentra al iniciar el componente
+    const path &#x3D; this.router.url
+    this.updateStep(path)
+    
+   
+    // 3. Suscribirse al evento NavigationEnd para detectar cambios en la navegación
+    this.routerSubscription &#x3D; this.router.events.subscribe(event &#x3D;&gt; {
+      if (event instanceof NavigationEnd) {
+        this.updateStep(event.url)
+
+      }
+    });
+  }
+ /**
+  * updateStep
+  *   1. obtiene el ultimo segment de la URL
+  *   2. Busca en el array a que paso corresponde ese segmento. Toma el index de ese paso, actualiza la variable actualStep, utilizada para el renderizado condicional.
+  * @param url la URL completa obtenida del navegador
+  */
+  updateStep(url: string): void {
+    // 1. obtiene la url y se queda con el ultimo segmento de la ruta
+    const urlSinParams &#x3D; url.split(&#x27;?&#x27;)[0];
+    const partesUrl &#x3D; urlSinParams.split(&#x27;/&#x27;);
+    const path &#x3D; partesUrl[partesUrl.length - 1];
+        // 2. obtiene el numero de paso al corresponde ese path
+    const index &#x3D; this.progressBarInit.findIndex(item &#x3D;&gt; item.path &#x3D;&#x3D;&#x3D; path);
+    if(index !&#x3D;&#x3D; -1)
+      this.actualStep &#x3D; index + 1
+    else
+      this.actualStep &#x3D; NaN
+  }
+
+  /**
+   * ngOnDestroy
+   * se des-suscribe de la dependencia que le permite obtener la URL
+   */
+  ngOnDestroy(): void {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;d-flex flex-column flex-md-row progress-bar-box justify-content-center fondo-nav&quot;&gt;
+    &lt;!-- nombre de flow de carga --&gt;
+    &lt;div *ngIf&#x3D;&quot;titleLayout&quot; class&#x3D;&quot;d-none d-sm-flex flex-sm-column justify-content-center col-md-2&quot;&gt;
+        &lt;h4 class&#x3D;&quot;text-center fw-normal mb-sm-0 mb-md-2&quot; data-qa&#x3D;&quot;nameFlow&quot;&gt;{{titleLayout}}&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;!-- nombre del paso actual --&gt;
+
+    &lt;div *ngIf&#x3D;&quot;progressBarInit.length &gt; 0&quot; class&#x3D;&quot;mb-sm-1 mb-md-0 col-md-3 d-flex flex-column justify-content-center&quot;&gt;
+        &lt;h5 class&#x3D;&quot;text-center text-md-end fw-normal&quot; data-qa&#x3D;&quot;nameStep&quot;&gt;{{progressBarInit[actualStep-1].name}}&lt;/h5&gt;
+    &lt;/div&gt;
+    &lt;!-- linea de separacion (no es visible en mobile) --&gt;
+    &lt;div *ngIf&#x3D;&quot;progressBarInit.length &gt; 0&quot; class&#x3D;&quot;d-none d-md-flex flex-column justify-content-center col-1&quot;&gt;
+        &lt;div class&#x3D;&quot;line-separation mx-3 mb-1&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- renderizado de sección indicadora de los pasos --&gt;
+    &lt;div *ngIf&#x3D;&quot;progressBarInit.length &gt; 0&quot;
+        class&#x3D;&quot;p-0 mb-1 d-flex justify-content-center justify-content-md-start gap-2 gap-md-8 dots-box col-md-6&quot;&gt;
+        &lt;div class&#x3D;&quot;d-flex mb-sm-1 mb-md-0 mb-md-0&quot;&gt;
+            &lt;div class&#x3D;&quot;d-flex align-content-center&quot; *ngFor&#x3D;&quot;let step of progressBarInit; let i &#x3D; index&quot;&gt;
+                &lt;!-- puntos de cada paso --&gt;
+                &lt;div class&#x3D;&quot;d-flex flex-column justify-content-center&quot;&gt;
+                    &lt;div [ngClass]&#x3D;&quot;{
+                            &#x27;progress-bar-item&#x27; : true,  
+                            &#x27;active&#x27; : actualStep&#x3D;&#x3D;i+1,  
+                            &#x27;complete&#x27; : actualStep&gt;i+1 
+                            }&quot;&gt;
+                        &lt;!-- puntito que va en el centro del item activo --&gt;
+                        &lt;div class&#x3D;&quot;inisde-dot twinkle-animation&quot; *ngIf&#x3D;&quot;actualStep&#x3D;&#x3D;i+1&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!-- linea que une los puntos entre si --&gt;
+                &lt;div class&#x3D;&quot;d-flex flex-column justify-content-center&quot;&gt;
+                    &lt;div [ngClass]&#x3D;&quot;{&#x27;line-flow&#x27;: true, &#x27;complete&#x27; : actualStep&gt;i+1 }&quot; *ngIf&#x3D;&quot;i+1!&#x3D;steps&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;!-- contador de pasos --&gt;
+        &lt;div class&#x3D;&quot;d-flex flex-column justify-content-center&quot;&gt;
+            &lt;p class&#x3D;&quot;mb-1 mb-sm-2 mb-md-1 ms-md-1 f-6&quot;&gt;paso {{actualStep}}/{{steps}}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;progressBarInit.length &#x3D;&#x3D; 0&quot; class&#x3D;&quot;d-flex flex-column justify-content-center&quot;&gt;
+        &lt;h4 class&#x3D;&quot;text-center fw-normal&quot;&gt;😞 No existen pasos para mostrar...&lt;/h4&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./progress-bar-form.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.progress-bar-box {
+    height: 90px;
+    color: #DDDCDC;
+}
+
+.progress-bar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 1; */
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: #DDDCDC;
+    border-radius: 100%;
+    transition: height 0.2s ease, width 0.2s ease;
+}
+
+.inisde-dot {
+    /* z-index: 2; */
+    width: 12px;
+    height: 12px;
+    background: #DDDCDC;
+    border-radius: 100%;
+}
+
+.progress-bar-item.active {
+    width: 24px;
+    height: 24px;
+    background: #49A3E5;
+}
+
+.line-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 3; */
+    width: 30px;
+    height: 3px;
+    background-color: #DDDCDC;
+    transition: height 0.2s ease;
+}
+
+.line-flow.complete {
+    height: 3px;
+    background: #49A3E5;
+
+}
+
+.progress-bar-item.complete {
+    width: 20px;
+    height: 20px;
+    background: #49A3E5;
+}
+
+.line-separation {
+    height: 3px;
+    background-color: #DDDCDC;
+    border-radius: 3px;
+}
+
+@media (min-width: 576px) {
+    .progress-bar-box {
+        height: 110px;
+    }
+
+    .line-flow {
+        width: 35px;
+    }
+
+    .dots-box {
+        height: 31px;
+    }
+}
+
+@media (min-width: 768px) {
+    .progress-bar-item {
+        width: 21px;
+        height: 21px;
+    }
+
+    .progress-bar-box {
+        height: 80px;
+    }
+
+    .progress-bar-item.active {
+        width: 30px;
+        height: 30px;
+    }
+
+    .inisde-dot {
+        width: 18px;
+        height: 18px;
+    }
+
+    .line-flow {
+        width: 50px;
+    }
+
+    .progress-bar-item.complete {
+        width: 21px;
+        height: 21px;
+    }
+
+    .dots-box {
+        height: auto;
+    }
+}
+
+.twinkle-animation {
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0% {
+        width: 12px;
+        height: 12px;
+    }
+
+    50% {
+        width: 70%;
+        height: 70%;
+    }
+
+    100% {
+        width: 12px;
+        height: 12px;
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="d-flex flex-column flex-md-row progress-bar-box justify-content-center fondo-nav">    <!-- nombre de flow de carga -->    <div *ngIf="titleLayout" class="d-none d-sm-flex flex-sm-column justify-content-center col-md-2">        <h4 class="text-center fw-normal mb-sm-0 mb-md-2" data-qa="nameFlow">{{titleLayout}}</h4>    </div>    <!-- nombre del paso actual -->    <div *ngIf="progressBarInit.length > 0" class="mb-sm-1 mb-md-0 col-md-3 d-flex flex-column justify-content-center">        <h5 class="text-center text-md-end fw-normal" data-qa="nameStep">{{progressBarInit[actualStep-1].name}}</h5>    </div>    <!-- linea de separacion (no es visible en mobile) -->    <div *ngIf="progressBarInit.length > 0" class="d-none d-md-flex flex-column justify-content-center col-1">        <div class="line-separation mx-3 mb-1"></div>    </div>    <!-- renderizado de sección indicadora de los pasos -->    <div *ngIf="progressBarInit.length > 0"        class="p-0 mb-1 d-flex justify-content-center justify-content-md-start gap-2 gap-md-8 dots-box col-md-6">        <div class="d-flex mb-sm-1 mb-md-0 mb-md-0">            <div class="d-flex align-content-center" *ngFor="let step of progressBarInit; let i = index">                <!-- puntos de cada paso -->                <div class="d-flex flex-column justify-content-center">                    <div [ngClass]="{                            \'progress-bar-item\' : true,                              \'active\' : actualStep==i+1,                              \'complete\' : actualStep>i+1                             }">                        <!-- puntito que va en el centro del item activo -->                        <div class="inisde-dot twinkle-animation" *ngIf="actualStep==i+1"></div>                    </div>                </div>                <!-- linea que une los puntos entre si -->                <div class="d-flex flex-column justify-content-center">                    <div [ngClass]="{\'line-flow\': true, \'complete\' : actualStep>i+1 }" *ngIf="i+1!=steps"></div>                </div>            </div>        </div>        <!-- contador de pasos -->        <div class="d-flex flex-column justify-content-center">            <p class="mb-1 mb-sm-2 mb-md-1 ms-md-1 f-6">paso {{actualStep}}/{{steps}}</p>        </div>    </div>    <div *ngIf="progressBarInit.length == 0" class="d-flex flex-column justify-content-center">        <h4 class="text-center fw-normal">😞 No existen pasos para mostrar...</h4>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreasDeIncumbenciaComponent', 'selector': 'app-areas-de-incumbencia'},{'name': 'BotonEditarComponent', 'selector': 'app-boton-editar'},{'name': 'DatosDeContactoComponent', 'selector': 'app-datos-de-contacto'},{'name': 'DatosDeCursoComponent', 'selector': 'app-datos-de-curso'},{'name': 'DatosDeIdiomaComponent', 'selector': 'app-datos-idioma'},{'name': 'DatosDeNivelEducativoComponent', 'selector': 'app-datos-nivel-educativo'},{'name': 'DatosExperienciaLaboralComponent', 'selector': 'app-datos-experiencia-laboral'},{'name': 'DatosInformaticaComponent', 'selector': 'app-datos-informatica'},{'name': 'DatosPersonalesComponent', 'selector': 'app-datos-personales'},{'name': 'DescargarCvAutogeneradoComponent', 'selector': 'app-descargar-cv-autogenerado'},{'name': 'EditarFormComponent', 'selector': 'app-editar-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormAreasDeIncumbenciaComponent', 'selector': 'app-form-areas-de-incumbencia'},{'name': 'FormDatosCvCursoComponent', 'selector': 'app-form-datos-cv-curso'},{'name': 'FormDatosCvIdiomaComponent', 'selector': 'app-form-datos-cv-idioma'},{'name': 'FormDatosCvNivelEducativoComponent', 'selector': 'app-form-datos-cv-nivel-educativo'},{'name': 'FormDatosDeContactoComponent', 'selector': 'app-form-datos-de-contacto'},{'name': 'FormDatosPersonalesComponent', 'selector': 'app-form-datos-personales'},{'name': 'FormExperienciaLaboralComponent', 'selector': 'app-form-experiencia-laboral'},{'name': 'FormInformaticaComponent', 'selector': 'app-form-informatica'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LayoutFlowFormComponent', 'selector': 'app-layout-flow-form'},{'name': 'LayoutFlowFormCvComponent', 'selector': 'app-layout-flow-form-cv'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MensajeErrorFetchComponent', 'selector': 'app-mensaje-error-fetch'},{'name': 'PrincipalComponent', 'selector': 'app-principal'},{'name': 'ProgressBarFormComponent', 'selector': 'app-progress-bar-form'},{'name': 'ResumenComponent', 'selector': 'app-resumen'},{'name': 'ScreenFinCargaCvComponent', 'selector': 'app-screen-fin-carga-cv'},{'name': 'ScreenFinDeCargaComponent', 'selector': 'app-screen-fin-de-carga'},{'name': 'SelectAutocompleteComponent', 'selector': 'app-select-autcomplete'},{'name': 'SubirArchivoCvComponent', 'selector': 'app-subir-archivo-cv'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ProgressBarFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ProgressBarFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

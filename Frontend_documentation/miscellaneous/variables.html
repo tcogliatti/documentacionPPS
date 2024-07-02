@@ -1,0 +1,758 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sbl-municipio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sbl-municipio documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#ADITIONAL_DATA" title="tests/data_test.ts" ><b>ADITIONAL_DATA</b>&nbsp;&nbsp;&nbsp;(tests/.../data_test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#API_BASE" title="src/constants.ts" ><b>API_BASE</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#API_PATH" title="src/constants.ts" ><b>API_PATH</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#config" title="playwright.config.ts" ><b>config</b>&nbsp;&nbsp;&nbsp;(playwright.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#context" title="src/test.ts" ><b>context</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.prod.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MAXIMOS" title="src/constants.ts" ><b>MAXIMOS</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MINIMOS" title="src/constants.ts" ><b>MINIMOS</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NEW_POSTULANTE" title="tests/data_test.ts" ><b>NEW_POSTULANTE</b>&nbsp;&nbsp;&nbsp;(tests/.../data_test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#require" title="src/test.ts" ><b>require</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ROUTES" title="src/constants.ts" ><b>ROUTES</b>&nbsp;&nbsp;&nbsp;(src/.../constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#URL_BASE_DEV" title="tests/data_test.ts" ><b>URL_BASE_DEV</b>&nbsp;&nbsp;&nbsp;(tests/.../data_test.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>tests/data_test.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ADITIONAL_DATA"></a>
+                    <span class="name">
+                        <span ><b>ADITIONAL_DATA</b></span>
+                        <a href="#ADITIONAL_DATA"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    nivelesEducativos: [
+        {
+            nivelEducativo: &#x27;1: Object&#x27;,
+            institucion: &#x27;Escuela Primaria Test&#x27;,
+            especialidad: &#x27;Nivel Primario&#x27;,
+            estado: &#x27;completo&#x27;,
+        },
+        {
+            nivelEducativo: &#x27;2: Object&#x27;,
+            institucion: &#x27;Escuela Secundaria Test&#x27;,
+            especialidad: &#x27;Bachiller Test&#x27;,
+            estado: &#x27;completo&#x27;,
+        },
+        {
+            nivelEducativo: &#x27;4: Object&#x27;,
+            institucion: &#x27;Universidad Test&#x27;,
+            especialidad: &#x27;Licenciatura Test&#x27;,
+            estado: &#x27;completo&#x27;,
+        }
+    ],
+    cursos: [
+        {
+            nombre: &#x27;Nombre Curso Test&#x27;,
+            institucion: &#x27;Institución de cursos Test&#x27;,
+            duracion: &#x27;6 meses&#x27;,
+            anio: &#x27;7: 2018&#x27;,
+            estado: &#x27;completo&#x27;,
+        }
+    ],
+    experienciaLaboral: [
+        {
+            puesto: &#x27;Puesto de QA&#x27;,
+            funcion: &#x27;Automation y Test E2E&#x27;,
+            empresa: &#x27;QA World SA.&#x27;,
+            desde: &#x27;2021-02-01&#x27;,
+            hasta: &#x27;2023-02-28&#x27;,
+            referencia: &#x27;Persona de referencia Test&#x27;,
+            tel: &#x27;2284111222&#x27;
+        }
+    ],
+    idiomas: [
+        {
+            idioma: &#x27;3: Object&#x27;,
+            nivel: &#x27;basico&#x27;,
+            anio: &#x27;6: 2019&#x27;,
+            estado: &#x27;incompleto&#x27;
+        },
+        {
+            idioma: &#x27;5: Object&#x27;,
+            nivel: &#x27;intermedio&#x27;,
+            anio: &#x27;10: 2015&#x27;,
+            estado: &#x27;completo&#x27;
+        }
+    ],
+    conocimientosInformaticos: [
+        {
+            descripcion: &#x27;EXCEL&#x27;,
+            anio: &#x27;3: 2022&#x27;,
+            estado: &#x27;completo&#x27;,
+            nivel: &#x27;avanzado&#x27;
+        },
+        {
+            descripcion: &#x27;WORD&#x27;,
+            anio: &#x27;7: 2018&#x27;,
+            estado: &#x27;completo&#x27;,
+            nivel: &#x27;avanzado&#x27;
+        }
+    ]
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NEW_POSTULANTE"></a>
+                    <span class="name">
+                        <span ><b>NEW_POSTULANTE</b></span>
+                        <a href="#NEW_POSTULANTE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    idUsuario: &#x27;1004&#x27;,
+    nombres: &#x27;NombreTest&#x27;,
+    apellido: &#x27;ApellidoTest&#x27;,
+    nombreautopercibido: &#x27;NombreAutopercibidoTest&#x27;,
+    fecnac: &#x27;1993-06-10&#x27;,
+    nrodoc: &#x27;33666777&#x27;,
+    nrofiscal: &#x27;20336667770&#x27;,
+    genero: &#x27;OTRO GENERO&#x27;,
+    otro_genero: &#x27;OtroGeneroTest&#x27;,
+    nacionalidad: &#x27;ARGENTINA&#x27;,
+    estado_civil: &#x27;SOLTERO&#x27;,
+    tipo_doc: &#x27;DOCUMENTO NACIONAL IDENTIDAD&#x27;,
+    tienelicencia: true,
+    tienehijos: true,
+    // para la foto de perfil setear el path de la foto almacenada localmente en el equipo que corre el test
+    fotoPerfil: &#x27;/Users/tc/Desktop/TUDAI/PPS-Municipalidad/repo-project/SBL-Municipio-Front/tests/files-test/uploads/foto-perfil-test.png&#x27;,
+
+    telefono: &#x27;02284123456&#x27;,
+    celular: &#x27;2284123345&#x27;,
+    mail: &#x27;mail.test@testing.com&#x27;,
+    provincia: &#x27;BUENOS AIRES&#x27;,
+    partido: &#x27;OLAVARRIA&#x27;,
+    localidad: &#x27;ESPIGAS&#x27;,
+    calle: &#x27;GIOVANELLI&#x27;,
+    numcalle: &#x27;1234&#x27;,
+
+    incumbenciaLaboral: [
+        &#x27;ADMINISTRACIÓN DE PERSONAL&#x27;,
+        &#x27;ELECTROMECANICA&#x27;,
+        &#x27;TECNOLOGIA / SISTEMAS&#x27;
+    ]
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="URL_BASE_DEV"></a>
+                    <span class="name">
+                        <span ><b>URL_BASE_DEV</b></span>
+                        <a href="#URL_BASE_DEV"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;http://localhost:4200/&quot;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/constants.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="API_BASE"></a>
+                    <span class="name">
+                        <span ><b>API_BASE</b></span>
+                        <a href="#API_BASE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;http://localhost:8080/api&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="API_PATH"></a>
+                    <span class="name">
+                        <span ><b>API_PATH</b></span>
+                        <a href="#API_PATH"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    NACIONALIDAD: &quot;opcion/nacionalidad&quot;,
+    TIPO_DNI: &quot;opcion/tipos-doc&quot;,
+    ESTADO_CIVIL: &quot;opcion/estado-civil&quot;,
+    PROVINCIA: &quot;opcion/provincia&quot;,
+    PARTIDO: &quot;opcion/partido&quot;,
+    LOCALIDAD: &quot;opcion/localidad&quot;,
+    CALLE: &quot;opcion/calle&quot;,
+    POSTULANTE: &quot;postulante&quot;,
+    GENERO: &quot;opcion/genero&quot;,
+    AREA: &quot;area&quot;,
+    NIVEL_EDUCATIVO: &quot;opcion/nivel-educativo&quot;,
+    IDIOMA: &quot;opcion/idioma&quot;,
+    AREA_POSTULANTE: &quot;area-postulante&quot;,
+    POSTULANTE_POR_USUARIO: &#x27;postulante/usuario&#x27;,
+    CV_FILE: &#x27;uploads/cv-file&#x27;,
+    SUBIR_CV: &#x27;datos-cv/subir-cv&#x27;,
+    DATOS_CV: &#x27;datos-cv&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MAXIMOS"></a>
+                    <span class="name">
+                        <span ><b>MAXIMOS</b></span>
+                        <a href="#MAXIMOS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    EDAD_MAXIMA: 70,
+    MAX_INTENTOS_FETCH: 3,
+    MAX_NRODOC: 999999999,
+    MAX_NROFISCAL: 99999999999,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MINIMOS"></a>
+                    <span class="name">
+                        <span ><b>MINIMOS</b></span>
+                        <a href="#MINIMOS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    MIN_NRODOC: 1000000,
+    MIN_NROFISCAL: 10000000000,
+    EDAD_MINIMA: 16,
+    TELEFONO: 1000000,
+    CELULAR: 1000000,
+    ANIOS_SELECT: 30,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ROUTES"></a>
+                    <span class="name">
+                        <span ><b>ROUTES</b></span>
+                        <a href="#ROUTES"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    PRINCIPAL: &quot;&quot;,
+    DATOS_REQUERIDOS: &quot;datos-requeridos&quot;,
+    DATOS_CV: &quot;datos-cv&quot;,
+    RESUMEN: &quot;resumen&quot;,
+    POSTULACIONES: &quot;postulaciones&quot;,
+    EDITAR: &quot;editar&quot;,
+    DATOS_PERSONALES: &quot;datos-personales&quot;,
+    DATOS_CONTACTO: &quot;datos-de-contacto&quot;,
+    AREAS_INCUMBENCIA: &quot;areas-incumbencia&quot;,
+    COMPLETO_DATOS_REQUERIDOS: &quot;sucessfull-form&quot;,
+    COMPLETO_DATOS_CV: &quot;sucessfull-form-cv&quot;,
+    NIVEL_EDUCATIVO: &quot;nivel-educativo&quot;,
+    IDIOMA: &quot;idioma&quot;,
+    CURSO: &quot;curso&quot;,
+    EXPERIENCIA_LABORAL: &quot;experiencia-laboral&quot;,
+    INFORMATICA: &quot;informatica&quot;,
+    SUBIR_CV: &quot;subir-cv&quot;,
+    DESCARGAR_CV: &quot;descargar-cv&quot;,
+    VISTA_PREVIA_CV: &quot;vista-previa-cv&quot;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>playwright.config.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="config"></a>
+                    <span class="name">
+                        <span ><b>config</b></span>
+                        <a href="#config"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>PlaywrightTestConfig</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  use: {
+    headless: false, // Esto mostrará el navegador mientras se ejecutan las pruebas
+  },
+  projects: [
+    {
+      name: &#x27;chromium&#x27;,
+      use: { browserName: &#x27;chromium&#x27; },
+      retries: 2, // Cantidad de veces que se intenta ejecutar el test en caso de fallar
+      timeout: 3000, // Tiempo máximo de espera para cada test en milisegundos (30 segundos en este caso)
+    },
+    // {
+    //   name: &#x27;firefox&#x27;,
+    //   use: { browserName: &#x27;firefox&#x27; },
+    // },
+    // {
+    //   name: &#x27;safari&#x27;,
+    //   use: { browserName: &#x27;webkit&#x27;, channel: &#x27;safari&#x27; },
+    // },
+    // {
+    //   name: &#x27;webkit&#x27;,
+    //   use: { browserName: &#x27;webkit&#x27; },
+    // },
+  ],
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/test.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="context"></a>
+                    <span class="name">
+                        <span ><b>context</b></span>
+                        <a href="#context"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="require"></a>
+                    <span class="name">
+                        <span ><b>require</b></span>
+                        <a href="#require"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.prod.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: true
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: false
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

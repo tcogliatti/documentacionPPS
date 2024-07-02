@@ -1,0 +1,1283 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sbl-municipio documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">sbl-municipio documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  FormDatosDeContactoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-form-datos-de-contacto</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./form-datos-de-contacto.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./form-datos-de-contacto.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#childComponents" >childComponents</a>
+                            </li>
+                            <li>
+                                <a href="#enviado" >enviado</a>
+                            </li>
+                            <li>
+                                <a href="#minCel" >minCel</a>
+                            </li>
+                            <li>
+                                <a href="#minTel" >minTel</a>
+                            </li>
+                            <li>
+                                <a href="#perfilPostulanteSuscription" >perfilPostulanteSuscription</a>
+                            </li>
+                            <li>
+                                <a href="#postulanteForm" >postulanteForm</a>
+                            </li>
+                            <li>
+                                <a href="#postulanteObservable$" >postulanteObservable$</a>
+                            </li>
+                            <li>
+                                <a href="#selectAutoErrorFlag" >selectAutoErrorFlag</a>
+                            </li>
+                            <li>
+                                <a href="#urlReload" >urlReload</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualizarInfo" >actualizarInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#validar" >validar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#validarForm" >validarForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#calles" >calles</a>
+                            </li>
+                            <li>
+                                <a href="#localidades" >localidades</a>
+                            </li>
+                            <li>
+                                <a href="#partidos" >partidos</a>
+                            </li>
+                            <li>
+                                <a href="#provincias" >provincias</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, postulanteService: <a href="../injectables/PostulanteService.html" target="_self">PostulanteService</a>, helperValidar: <a href="../injectables/ValidarFormHelperService.html" target="_self">ValidarFormHelperService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>postulanteService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PostulanteService.html" target="_self" >PostulanteService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>helperValidar</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ValidarFormHelperService.html" target="_self" >ValidarFormHelperService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section data-compodoc="block-inputs">
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="calles"></a>
+                        <b>calles</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Calle.html" target="_self" >Calle[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="localidades"></a>
+                        <b>localidades</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Localidad.html" target="_self" >Localidad[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:33</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="partidos"></a>
+                        <b>partidos</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Partido.html" target="_self" >Partido[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:37</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="provincias"></a>
+                        <b>provincias</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Provincia.html" target="_self" >Provincia[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:31</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualizarInfo"></a>
+                    <span class="name">
+                        <span ><b>actualizarInfo</b></span>
+                        <a href="#actualizarInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>actualizarInfo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="63"
+                                    class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método llamado al presionar en el botón de siguiente</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validar"></a>
+                    <span class="name">
+                        <span ><b>validar</b></span>
+                        <a href="#validar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validar()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="88"
+                                    class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validarForm"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>validarForm</b></span>
+                        <a href="#validarForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validarForm(form: HTMLFormElement)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>form</td>
+                                            <td>
+                                                        <code>HTMLFormElement</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="childComponents"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>childComponents</b></span>
+                        <a href="#childComponents"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/SelectAutocompleteComponent.html" target="_self" >QueryList&lt;SelectAutocompleteComponent&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChildren(SelectAutocompleteComponent)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enviado"></a>
+                    <span class="name">
+                        <span ><b>enviado</b></span>
+                        <a href="#enviado"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="minCel"></a>
+                    <span class="name">
+                        <span ><b>minCel</b></span>
+                        <a href="#minCel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>MINIMOS.CELULAR</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="minTel"></a>
+                    <span class="name">
+                        <span ><b>minTel</b></span>
+                        <a href="#minTel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>MINIMOS.TELEFONO</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="perfilPostulanteSuscription"></a>
+                    <span class="name">
+                        <span ><b>perfilPostulanteSuscription</b></span>
+                        <a href="#perfilPostulanteSuscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postulanteForm"></a>
+                    <span class="name">
+                        <span ><b>postulanteForm</b></span>
+                        <a href="#postulanteForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >PostulantePerfil</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="postulanteObservable$"></a>
+                    <span class="name">
+                        <span ><b>postulanteObservable$</b></span>
+                        <a href="#postulanteObservable$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PostulantePerfil.html" target="_self" >Observable&lt;PostulantePerfil&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectAutoErrorFlag"></a>
+                    <span class="name">
+                        <span ><b>selectAutoErrorFlag</b></span>
+                        <a href="#selectAutoErrorFlag"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="urlReload"></a>
+                    <span class="name">
+                        <span ><b>urlReload</b></span>
+                        <a href="#urlReload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;/${ROUTES.DATOS_REQUERIDOS}/${ROUTES.DATOS_CONTACTO}&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/formularios/form-datos-de-contacto/form-datos-de-contacto.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from &#x27;@angular/core&#x27;;
+import { MINIMOS, ROUTES } from &quot;../../../constants&quot;;
+import { Localidad } from &quot;../../interfaces/Localidad&quot;;
+import { Provincia } from &quot;../../interfaces/Provincia&quot;;
+import { Calle } from &quot;../../interfaces/Calle&quot;;
+import { Partido } from &quot;../../interfaces/Partido&quot;;
+import { Observable, Subscription } from &quot;rxjs&quot;;
+import { PostulantePerfil } from &quot;../../interfaces/PostulantePerfil&quot;;
+import { Router } from &quot;@angular/router&quot;;
+import { PostulanteService } from &quot;../../servicios/postulante.service&quot;;
+import { ValidarFormHelperService } from &quot;../../servicios/validar-form-helper.service&quot;;
+import { SelectAutocompleteComponent } from &quot;../select-autocomplete/select-autocomplete.component&quot;;
+
+@Component({
+  selector: &#x27;app-form-datos-de-contacto&#x27;,
+  templateUrl: &#x27;./form-datos-de-contacto.component.html&#x27;,
+  styleUrls: [&#x27;./form-datos-de-contacto.component.css&#x27;]
+})
+
+/**
+ * Contiene el formulario para cargar los datos de contacto
+ * Recibe una serie de arrays del componente padre:
+ *  1. Provincias
+ *  2. Localidades
+ *  3. Partido
+ *  4. Calle
+ */
+export class FormDatosDeContactoComponent implements OnInit {
+  urlReload: string &#x3D; &#x60;/${ROUTES.DATOS_REQUERIDOS}/${ROUTES.DATOS_CONTACTO}&#x60;;
+  @Input()
+  provincias: Provincia[] &#x3D; [];
+  @Input()
+  localidades: Localidad[] &#x3D; [];
+  @Input()
+  calles: Calle[] &#x3D; [];
+  @Input()
+  partidos: Partido[] &#x3D; [];
+
+  enviado &#x3D; false; //lo necesita el required del componente ng-autocomplete
+
+  minTel: number &#x3D; MINIMOS.TELEFONO;
+  minCel: number &#x3D; MINIMOS.CELULAR;
+  selectAutoErrorFlag: boolean &#x3D; false;
+
+  postulanteObservable$: Observable&lt;PostulantePerfil&gt;;
+  perfilPostulanteSuscription: Subscription;
+  postulanteForm!: PostulantePerfil;
+
+  @ViewChildren(SelectAutocompleteComponent) childComponents!: QueryList&lt;SelectAutocompleteComponent&gt;;
+  constructor(private router: Router, private postulanteService: PostulanteService, private helperValidar: ValidarFormHelperService) {
+
+    this.postulanteObservable$ &#x3D; this.postulanteService.postulanteLocal.asObservable()
+    this.perfilPostulanteSuscription &#x3D; this.postulanteObservable$.subscribe(postulanteFromService &#x3D;&gt; {
+      this.postulanteForm &#x3D; { ...postulanteFromService }
+    })
+  }
+
+  async ngOnInit(): Promise&lt;void&gt; {
+  }
+  /**
+   * Método llamado al presionar en el botón de siguiente
+   */
+  actualizarInfo(): boolean {
+    this.enviado &#x3D; true;
+
+    const form: HTMLFormElement | null &#x3D; document.querySelector(&#x27;#formContactData&#x27;);
+
+    if (form &#x3D;&#x3D; null) {
+      return false;
+    }
+
+    if (this.validarForm(form)) {
+      // Actualiza el estado del servicio con los nuevos datos
+      this.postulanteService.updateEstadoPostulanteLocal(this.postulanteForm);
+      return true;
+
+      // Redidige a formulario de datos de contacto
+      //this.router.navigate([this.urlFormAreas]);
+    } else {
+      form.classList.add(&#x27;was-validated&#x27;);
+      return false;
+    }
+  }
+  private validarForm(form: HTMLFormElement) {
+    return this.validar() &amp;&amp; form.checkValidity();
+  }
+
+  validar(): boolean {
+    // Valida que los valores de los selects autocompletar matchen con algun item de su collecion
+    this.selectAutoErrorFlag &#x3D; this.helperValidar.validateAutocompletes(this.childComponents);
+
+    if (this.selectAutoErrorFlag) {
+      return false;
+    }
+    return true;
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;form id&#x3D;&quot;formContactData&quot; class&#x3D;&quot;d-flex flex-column justify-content-center needs-validation&quot;&gt;
+  &lt;!-- BUTTON NECESARIO PARA FRENAR EL SUBMIT AL PRESIONAR ENTER EN UN INPUT --&gt;
+  &lt;button type&#x3D;&quot;submit&quot; disabled aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;d-none&quot;&gt;&lt;/button&gt;
+  &lt;div class&#x3D;&quot;d-flex flex-column gap-md-4  flex-md-row justify-content-center &quot;&gt;
+
+    &lt;div class&#x3D;&quot;mb-2 mx-2 mx-sm-0&quot;&gt;
+      &lt;label for&#x3D;&quot;telefono&quot; class&#x3D;&quot;form-label m-0&quot;&gt;Teléfono de contacto &lt;span
+        class&#x3D;&quot;obligatorio&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control fondo-inputs&quot; id&#x3D;&quot;telefono&quot; aria-describedby&#x3D;&quot;emailHelp&quot;
+             name&#x3D;&quot;telefono&quot; [min]&#x3D;&quot;minTel&quot; [(ngModel)]&#x3D;&quot;postulanteForm.telefono&quot;
+             required&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback m-0&quot;&gt;
+        Por favor ingrese un número válido de teléfono
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;mb-2 mx-2 mx-sm-0 &quot;&gt;
+      &lt;label for&#x3D;&quot;celular&quot; class&#x3D;&quot;form-label m-0&quot;&gt;Teléfono de contacto adicional&lt;/label&gt;
+      &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control fondo-inputs&quot; id&#x3D;&quot;celular&quot; aria-describedby&#x3D;&quot;emailHelp&quot;
+             name&#x3D;&quot;celular&quot; [min]&#x3D;&quot;minCel&quot; [(ngModel)]&#x3D;&quot;postulanteForm.celular&quot;&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback m-0&quot;&gt;
+        Por favor ingrese un número válido de celular
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;d-flex flex-column gap-md-4 flex-md-row justify-content-center&quot;&gt;
+
+    &lt;div class&#x3D;&quot;mb-2 mx-2 mx-sm-0 aling-item-center&quot;&gt;
+      &lt;label for&#x3D;&quot;email&quot; class&#x3D;&quot;form-label m-0&quot;&gt;E-mail &lt;span class&#x3D;&quot;obligatorio&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;input type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control fondo-inputs&quot; id&#x3D;&quot;email&quot; name&#x3D;&quot;mail&quot;
+             [(ngModel)]&#x3D;&quot;postulanteForm.mail&quot; required&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback m-0&quot;&gt;
+        Por favor complete su correo electrónico
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;mb-2 mx-2 mx-sm-0&quot;&gt;
+      &lt;label for&#x3D;&quot;selectProvincia&quot; class&#x3D;&quot;form-label m-0&quot;&gt;Provincia &lt;span
+        class&#x3D;&quot;obligatorio&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+
+      &lt;app-select-autcomplete [esRequerido]&#x3D;&quot;true&quot; class&#x3D;&quot;select-requerido&quot;
+                              [(dato)]&#x3D;&quot;postulanteForm.provincia&quot; [collection]&#x3D;provincias
+                              id&#x3D;&quot;selectProvincia&quot;&gt;&lt;/app-select-autcomplete&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback m-0&quot; [ngClass]&#x3D;&quot;{&#x27;displayB&#x27;: (!postulanteForm.provincia &amp;&amp; enviado) || (postulanteForm.provincia &amp;&amp; !postulanteForm.provincia.idProvincia &amp;&amp; enviado)}&quot;&gt;
+        Por favor seleccione una provincia
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;d-flex flex-column gap-md-4 flex-md-row justify-content-center&quot;&gt;
+
+    &lt;div class&#x3D;&quot;mb-2 mx-2 mx-sm-0 aling-item-center&quot;&gt;
+
+      &lt;label for&#x3D;&quot;selectPartido&quot; class&#x3D;&quot;form-label m-0&quot;&gt;Partido &lt;span class&#x3D;&quot;obligatorio&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;app-select-autcomplete [esRequerido]&#x3D;&quot;true&quot; class&#x3D;&quot;select-requerido&quot;
+                              [(dato)]&#x3D;&quot;postulanteForm.partido&quot; [collection]&#x3D;partidos
+                              id&#x3D;&quot;selectPartido&quot;&gt;&lt;/app-select-autcomplete&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback m-0&quot; [ngClass]&#x3D;&quot;{&#x27;displayB&#x27;: (!postulanteForm.partido &amp;&amp; enviado) || (postulanteForm.partido &amp;&amp; !postulanteForm.partido.idpartido &amp;&amp; enviado)}&quot;&gt;
+        Por favor seleccione un partido
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;mb-2 mx-2 mx-sm-0&quot;&gt;
+
+      &lt;label for&#x3D;&quot;selectLocalidad&quot; class&#x3D;&quot;form-label m-0&quot;&gt;Localidad &lt;span
+        class&#x3D;&quot;obligatorio&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;app-select-autcomplete [esRequerido]&#x3D;&quot;true&quot; class&#x3D;&quot;select-requerido&quot;
+                              [(dato)]&#x3D;&quot;postulanteForm.localidad&quot; [collection]&#x3D;localidades
+                              id&#x3D;&quot;selectLocalidad&quot;&gt;&lt;/app-select-autcomplete&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback m-0&quot; [ngClass]&#x3D;&quot;{&#x27;displayB&#x27;: (!postulanteForm.localidad &amp;&amp; enviado) || (postulanteForm.localidad &amp;&amp; !postulanteForm.localidad.idLocalidad &amp;&amp; enviado)}&quot;&gt;
+        Por favor seleccione una localidad
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;d-flex flex-column gap-md-4 flex-md-row justify-content-center&quot;&gt;
+
+    &lt;div class&#x3D;&quot;mb-2 mx-2 mx-sm-0 mx-2 mx-sm-0&quot;&gt;
+
+      &lt;label for&#x3D;&quot;selectCalle&quot; class&#x3D;&quot;form-label m-0&quot;&gt;Calle &lt;span class&#x3D;&quot;obligatorio&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;app-select-autcomplete [esRequerido]&#x3D;&quot;true&quot; class&#x3D;&quot;select-requerido&quot;
+                              [(dato)]&#x3D;&quot;postulanteForm.calle&quot; [collection]&#x3D;calles id&#x3D;&quot;selectCalle&quot;&gt;&lt;/app-select-autcomplete&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback m-0&quot; [ngClass]&#x3D;&quot;{&#x27;displayB&#x27;: (!postulanteForm.calle &amp;&amp; enviado) || (postulanteForm.calle &amp;&amp; !postulanteForm.calle.idCalle &amp;&amp; enviado)}&quot;&gt;
+        Por favor seleccione una calle
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;mb-2 mx-2 mx-sm-0&quot;&gt;
+      &lt;label for&#x3D;&quot;numero&quot; class&#x3D;&quot;form-label m-0&quot;&gt;Número &lt;span class&#x3D;&quot;obligatorio&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+      &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control fondo-inputs&quot; id&#x3D;&quot;numero&quot; name&#x3D;&quot;numcalle&quot;
+             [(ngModel)]&#x3D;&quot;postulanteForm.numcalle&quot; required&gt;
+      &lt;div class&#x3D;&quot;invalid-feedback m-0&quot;&gt;
+        Por favor ingrese el número de dirección
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+&lt;/form&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./form-datos-de-contacto.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+.displayB{
+  display: block !important;
+}
+@media (min-width: 768px){
+  form div div{
+    min-width: 400px;
+    margin: 15px 15px 0px 15px;
+  }
+
+  .checkbox{
+
+    display: flex;
+    justify-content: center;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><form id="formContactData" class="d-flex flex-column justify-content-center needs-validation">  <!-- BUTTON NECESARIO PARA FRENAR EL SUBMIT AL PRESIONAR ENTER EN UN INPUT -->  <button type="submit" disabled aria-hidden="true" class="d-none"></button>  <div class="d-flex flex-column gap-md-4  flex-md-row justify-content-center ">    <div class="mb-2 mx-2 mx-sm-0">      <label for="telefono" class="form-label m-0">Teléfono de contacto <span        class="obligatorio">*</span></label>      <input type="number" class="form-control fondo-inputs" id="telefono" aria-describedby="emailHelp"             name="telefono" [min]="minTel" [(ngModel)]="postulanteForm.telefono"             required>      <div class="invalid-feedback m-0">        Por favor ingrese un número válido de teléfono      </div>    </div>    <div class="mb-2 mx-2 mx-sm-0 ">      <label for="celular" class="form-label m-0">Teléfono de contacto adicional</label>      <input type="number" class="form-control fondo-inputs" id="celular" aria-describedby="emailHelp"             name="celular" [min]="minCel" [(ngModel)]="postulanteForm.celular">      <div class="invalid-feedback m-0">        Por favor ingrese un número válido de celular      </div>    </div>  </div>  <div class="d-flex flex-column gap-md-4 flex-md-row justify-content-center">    <div class="mb-2 mx-2 mx-sm-0 aling-item-center">      <label for="email" class="form-label m-0">E-mail <span class="obligatorio">*</span></label>      <input type="email" class="form-control fondo-inputs" id="email" name="mail"             [(ngModel)]="postulanteForm.mail" required>      <div class="invalid-feedback m-0">        Por favor complete su correo electrónico      </div>    </div>    <div class="mb-2 mx-2 mx-sm-0">      <label for="selectProvincia" class="form-label m-0">Provincia <span        class="obligatorio">*</span></label>      <app-select-autcomplete [esRequerido]="true" class="select-requerido"                              [(dato)]="postulanteForm.provincia" [collection]=provincias                              id="selectProvincia"></app-select-autcomplete>      <div class="invalid-feedback m-0" [ngClass]="{\'displayB\': (!postulanteForm.provincia && enviado) || (postulanteForm.provincia && !postulanteForm.provincia.idProvincia && enviado)}">        Por favor seleccione una provincia      </div>    </div>  </div>  <div class="d-flex flex-column gap-md-4 flex-md-row justify-content-center">    <div class="mb-2 mx-2 mx-sm-0 aling-item-center">      <label for="selectPartido" class="form-label m-0">Partido <span class="obligatorio">*</span></label>      <app-select-autcomplete [esRequerido]="true" class="select-requerido"                              [(dato)]="postulanteForm.partido" [collection]=partidos                              id="selectPartido"></app-select-autcomplete>      <div class="invalid-feedback m-0" [ngClass]="{\'displayB\': (!postulanteForm.partido && enviado) || (postulanteForm.partido && !postulanteForm.partido.idpartido && enviado)}">        Por favor seleccione un partido      </div>    </div>    <div class="mb-2 mx-2 mx-sm-0">      <label for="selectLocalidad" class="form-label m-0">Localidad <span        class="obligatorio">*</span></label>      <app-select-autcomplete [esRequerido]="true" class="select-requerido"                              [(dato)]="postulanteForm.localidad" [collection]=localidades                              id="selectLocalidad"></app-select-autcomplete>      <div class="invalid-feedback m-0" [ngClass]="{\'displayB\': (!postulanteForm.localidad && enviado) || (postulanteForm.localidad && !postulanteForm.localidad.idLocalidad && enviado)}">        Por favor seleccione una localidad      </div>    </div>  </div>  <div class="d-flex flex-column gap-md-4 flex-md-row justify-content-center">    <div class="mb-2 mx-2 mx-sm-0 mx-2 mx-sm-0">      <label for="selectCalle" class="form-label m-0">Calle <span class="obligatorio">*</span></label>      <app-select-autcomplete [esRequerido]="true" class="select-requerido"                              [(dato)]="postulanteForm.calle" [collection]=calles id="selectCalle"></app-select-autcomplete>      <div class="invalid-feedback m-0" [ngClass]="{\'displayB\': (!postulanteForm.calle && enviado) || (postulanteForm.calle && !postulanteForm.calle.idCalle && enviado)}">        Por favor seleccione una calle      </div>    </div>    <div class="mb-2 mx-2 mx-sm-0">      <label for="numero" class="form-label m-0">Número <span class="obligatorio">*</span></label>      <input type="number" class="form-control fondo-inputs" id="numero" name="numcalle"             [(ngModel)]="postulanteForm.numcalle" required>      <div class="invalid-feedback m-0">        Por favor ingrese el número de dirección      </div>    </div>  </div></form></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AreasDeIncumbenciaComponent', 'selector': 'app-areas-de-incumbencia'},{'name': 'BotonEditarComponent', 'selector': 'app-boton-editar'},{'name': 'DatosDeContactoComponent', 'selector': 'app-datos-de-contacto'},{'name': 'DatosDeCursoComponent', 'selector': 'app-datos-de-curso'},{'name': 'DatosDeIdiomaComponent', 'selector': 'app-datos-idioma'},{'name': 'DatosDeNivelEducativoComponent', 'selector': 'app-datos-nivel-educativo'},{'name': 'DatosExperienciaLaboralComponent', 'selector': 'app-datos-experiencia-laboral'},{'name': 'DatosInformaticaComponent', 'selector': 'app-datos-informatica'},{'name': 'DatosPersonalesComponent', 'selector': 'app-datos-personales'},{'name': 'DescargarCvAutogeneradoComponent', 'selector': 'app-descargar-cv-autogenerado'},{'name': 'EditarFormComponent', 'selector': 'app-editar-form'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormAreasDeIncumbenciaComponent', 'selector': 'app-form-areas-de-incumbencia'},{'name': 'FormDatosCvCursoComponent', 'selector': 'app-form-datos-cv-curso'},{'name': 'FormDatosCvIdiomaComponent', 'selector': 'app-form-datos-cv-idioma'},{'name': 'FormDatosCvNivelEducativoComponent', 'selector': 'app-form-datos-cv-nivel-educativo'},{'name': 'FormDatosDeContactoComponent', 'selector': 'app-form-datos-de-contacto'},{'name': 'FormDatosPersonalesComponent', 'selector': 'app-form-datos-personales'},{'name': 'FormExperienciaLaboralComponent', 'selector': 'app-form-experiencia-laboral'},{'name': 'FormInformaticaComponent', 'selector': 'app-form-informatica'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LayoutFlowFormComponent', 'selector': 'app-layout-flow-form'},{'name': 'LayoutFlowFormCvComponent', 'selector': 'app-layout-flow-form-cv'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'MensajeErrorFetchComponent', 'selector': 'app-mensaje-error-fetch'},{'name': 'PrincipalComponent', 'selector': 'app-principal'},{'name': 'ProgressBarFormComponent', 'selector': 'app-progress-bar-form'},{'name': 'ResumenComponent', 'selector': 'app-resumen'},{'name': 'ScreenFinCargaCvComponent', 'selector': 'app-screen-fin-carga-cv'},{'name': 'ScreenFinDeCargaComponent', 'selector': 'app-screen-fin-de-carga'},{'name': 'SelectAutocompleteComponent', 'selector': 'app-select-autcomplete'},{'name': 'SubirArchivoCvComponent', 'selector': 'app-subir-archivo-cv'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FormDatosDeContactoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FormDatosDeContactoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
